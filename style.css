@@ -6,6 +6,11 @@
 body {
   font-family: sans-serif;
   color: whitesmoke;
+  --darkblue: #020659c2;
+  --darkblue2: #527e21;
+  --darkblue3: #e6c007;
+  --yellow: #c0d904;
+  --darkyellow: #c7d4d9;
 }
 .cnt {
   display: flex;
@@ -13,13 +18,89 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(ellipse farthest-corner, #1a2e1c 20px, #000000ce);
+  background: radial-gradient(
+    ellipse farthest-corner,
+    var(--yellow) 20px,
+    #000000ce
+  );
   overflow: hidden;
 }
 .menu-allPlayers {
-  background: #1d4952;
+  background: var(--darkblue);
   border-radius: 4px;
   width: 80%;
   height: 10%;
   margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.menu-currentPlayers {
+  background: var(--darkblue);
+  border-radius: 4px;
+  width: 80%;
+  height: 10%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.menu-addPlayer {
+  background: var(--darkblue);
+  border-radius: 4px;
+  width: 80%;
+  height: 10%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.team-settings {
+  width: 80%;
+  height: 10%;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: var(--darkyellow);
+  display: flex;
+  align-items: center;
+}
+.team-settings-teamsCount {
+  width: 65%;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+.team-settings-teamsCount-team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--darkblue2);
+  padding: 13%;
+  background-color: var(--darkblue3);
+}
+.team-settings-confirm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 0 0 10px 1px whitesmoke;
+  background-color: var(--yellow);
+  color: white;
+  outline: none;
 }
