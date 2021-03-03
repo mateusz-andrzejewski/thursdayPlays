@@ -64,9 +64,10 @@ body {
 .team-settings {
   width: 80%;
   height: 10%;
+  margin: 10px 0;
   border-radius: 4px;
   padding: 1rem;
-  background-color: var(--darkyellow);
+  background-color: var(--darkblue);
   display: flex;
   align-items: center;
 }
@@ -76,7 +77,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  box-shadow: 0 0 2px 2px ddd;
   padding: 5px;
 }
 .team-settings-teamsCount-team {
@@ -86,10 +87,15 @@ body {
   font-size: 20px;
   width: 20px;
   height: 20px;
+  margin: 0 10px;
   border-radius: 50%;
   background-color: var(--darkblue2);
   padding: 13%;
   background-color: var(--darkblue3);
+  transition: 0.3s;
+}
+.team-settings-teamsCount-team:hover {
+  background-color: tomato;
 }
 .team-settings-confirm {
   width: 50px;
@@ -99,8 +105,42 @@ body {
   font-size: 25px;
   text-transform: uppercase;
   border: none;
-  box-shadow: 0 0 10px 1px whitesmoke;
+  box-shadow: 0 0 6px 1px whitesmoke;
   background-color: var(--yellow);
   color: white;
   outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.team-settings-confirm:hover {
+  background-color: tomato;
+}
+
+.randomDraw {
+  width: 80%;
+  height: 10%;
+  position: absolute;
+  bottom: 5%;
+}
+.random-results {
+  width: 95%;
+  height: 30%;
+  border: 1px solid black;
+}
+.randomDraw-button {
+  width: 100%;
+  height: 100%;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 3%;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  background-color: var(--yellow);
+  color: white;
+  transition: 0.3s;
+}
+.randomDraw-button:hover {
+  background-color: tomato;
 }
