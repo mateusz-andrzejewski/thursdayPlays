@@ -4,60 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Losuj drużyny!</title>
+    <title>Draw teams!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="cnt">
-        <div class="menu-allPlayers">wszyscy gracze</div>
-        <div class="menu-currentPlayers">obecni gracze</div>
-        <div class="menu-addPlayer">dodaj gracza</div>
-        <section class="team-settings">
-            <div class="team-settings-teamsCount">
-                <div class="team-settings-teamsCount-team">2</div>
-                <div class="team-settings-teamsCount-team">3</div>
-                <div class="team-settings-teamsCount-team">4</div>
-            </div>
-            <button class="team-settings-confirm" type="button">ok</button>
+        <section class="menu">
+            <section class="menu-views">
+                <div class="menu-vievs-all"><i class="far fa-list-alt"></i>all_Players</div>
+                <div class="menu-vievs-active"><i class="fas fa-list-alt"></i>active_Players</div>
+                <div class="menu-vievs-add"><i class="fas fa-plus"></i>add_Player</div>
+            </section>
         </section>
-        <section class="random-results">
-            <div class="random-results-teamRating">72%</div>
-            <div class="random-results-team">
-                <div class="random-results-team-player">Mateusz Andrzejewski</div>
-                <div class="random-results-team-player">Łukasz Błaszczuk</div>
-                <div class="random-results-team-player">Łukasz Dąbrowski</div>
-                <div class="random-results-team-player">Karol Krzyżankiewicz</div>
-                <div class="random-results-team-player">Dawid Dąbrowski</div>
-            </div>
-            <div class="random-results-otherTeams">
-                <div class="other-team">I</div>
-                <div class="other-team">II</div>
-                <div class="other-team">III</div>
-                <div class="other-team">IV</div>
+        <section class="setup">
+            <span class="setup-string">Number of teams</span>
+            <input type="number" class="setup-input">
+            <span class="setup-string">Number of players</span>
+            <input type="number" class="setup-input">
+        </section>
+        <section class="draw">
+            <button class="draw-button">draw!</button>
+        </section>
+        <section class="results">
+            <h3 class="results-teamName">Team 1</h3>
+            <div class="results-skillRate">72%</div>
+            <div class="results-prevButton"><</div>
+            <div class="results-nextButton">></div>
+            <div class="results-playersCnt">
+                <div class="results-playersCnt-player">Mateusz Andrzejewski</div>
+                <div class="results-playersCnt-player">Dawid Dąbrowski</div>
+                <div class="results-playersCnt-player">Łukasz Dąbrowski</div>
+                <div class="results-playersCnt-player">Paweł Karczewski</div>
+                <div class="results-playersCnt-player">Łukasz Błaszczuk</div>
             </div>
         </section>
-        <section class="randomDraw">
-            <button class="randomDraw-button">losuj</button>
-        </section>
-        <div class="cnt-modalAllPlayers">
-            <button class="close_btn">X</button>
-            <input type="search" class="search">
-            <button class="search_btn">szukaj</button>
-            <div class="resultTable">
-                <table>
-                    <thead>Imię i Nazwisko</thead> <thead>Poz</thead>
-                    <tbody>
-                        <tr>
-                            Mateusz Andrzejewski
-                        </tr>
-                        <tr>
-                            Łukasz Błaszczuk
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="confirm">Zatwierdź</div>
-        </div>        
+
     </div>
     <script src="app.js"></script>
 </body>
