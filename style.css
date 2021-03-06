@@ -1,3 +1,4 @@
+/* global layout properties */
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +20,7 @@ body {
   --backgroundTwo: #090709;
   --textColor: #fff;
 }
+/* first part - menu */
 .menu {
   display: flex;
   justify-content: space-around;
@@ -55,4 +57,17 @@ body {
 .menu-views > * > i {
   font-size: 1.7rem;
   margin-bottom: 10%;
+}
+.menu-vievs-all-text {
+  background-color: rgba(0, 0, 0, 0.63);
+  padding: 5px;
+  border-radius: 2.5px;
+}
+
+/* second part  - setup*/
+.setup {
+  position: absolute;
+  top: 19%;
+  left: 0;
+  background-color: #000;
 }
