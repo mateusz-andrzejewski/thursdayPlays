@@ -59,7 +59,7 @@ body {
   margin-bottom: 10%;
 }
 .menu-vievs-all-text {
-  background-color: rgba(0, 0, 0, 0.63);
+  background-color: rgba(0, 0, 0);
   padding: 5px;
   border-radius: 2.5px;
 }
@@ -392,5 +392,87 @@ footer {
   align-items: center;
   width: 40%;
   font-size: 0.7rem;
-  /* background-color: #fff; */
+}
+
+/* 3/3 part modal - addPlayer */
+.modal-addPlayer {
+  z-index: 1;
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 10%;
+  right: 10%;
+  background: linear-gradient(
+    to bottom,
+    var(--backgroundOne) -60%,
+    var(--backgroundTwo) 120%
+  );
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px black;
+}
+.modal-addPlayer-buttonClose {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}
+
+.modal-addPlayer-title {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min-content;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: black;
+  font-size: 1rem;
+}
+.modal-addPlayer-cnt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+  bottom: 0;
+  width: 100%;
+}
+.modal-addPlayer-cnt-nameStack,
+.modal-addPlayer-cnt-positionStack,
+.modal-addPlayer-cnt-skillStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-addPlayer-cnt-nameStack-fullName,
+.modal-addPlayer-cnt-positionStack-string,
+.modal-addPlayer-cnt-skillStack-string {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  background-color: #000;
+}
+.modal-addPlayer-cnt-nameStack-fullNameString {
+  text-align: center;
+  height: 1.5rem;
+}
+.modal-addPlayer-cnt-nameStack-fullNameString::placeholder {
+  color: rgb(175, 174, 174);
+}
+.modal-addPlayer-add {
+  width: 60%;
+  background-color: white;
+  border: none;
+  outline: yellow;
+  background-color: black;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 5px;
 }

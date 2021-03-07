@@ -113,7 +113,35 @@
                 </div>
             </div>
         </section>
-
+        <section class="modal-addPlayer">
+            <div class="modal-addPlayer-buttonClose"><i class="fas fa-times-circle"></i></div>
+            <h3 class="modal-addPlayer-title">add_Player</h3>
+            <div class="modal-addPlayer-cnt">
+                <div class="modal-addPlayer-cnt-nameStack">
+                    <span class="modal-addPlayer-cnt-nameStack-fullName">full_Name</span>
+                    <input type="text" class="modal-addPlayer-cnt-nameStack-fullNameString" placeholder="put_Full_Name">
+                </div>
+                <div class="modal-addPlayer-cnt-positionStack">
+                    <span class="modal-addPlayer-cnt-positionStack-string">position (D-def, A-attc, G-goalkeeper</span>
+                    <select name="skill" id="skill" class="modal-addPlayer-cnt-positionStack-skill-options">
+                        <option value="G">G</option>
+                        <option value="D" selected>D</option>
+                        <option value="A">A</option>
+                    </select>
+                </div>
+                <div class="modal-addPlayer-cnt-skillStack">
+                    <span class="modal-addPlayer-cnt-skillStack-string">skill_Rate (1-bottom, 5-top)</span>
+                    <select name="skill" id="skill" class="modal-addPlayer-cnt-positionStack-skill-options">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button class="modal-addPlayer-add">add_!</button>
+            </div>
+        </section>
     </div>
     <script src="app.js"></script>
 </body>
