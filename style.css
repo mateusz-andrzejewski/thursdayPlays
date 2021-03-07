@@ -396,6 +396,7 @@ footer {
 
 /* 3/3 part modal - addPlayer */
 .modal-addPlayer {
+  display: none;
   z-index: 1;
   position: absolute;
   top: 25%;
