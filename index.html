@@ -14,21 +14,27 @@
     <div class="cnt">
         <section class="menu">
             <section class="menu-views">
-                <div class="menu-vievs-all"><i class="far fa-list-alt"></i>all_Players</div>
-                <div class="menu-vievs-active"><i class="fas fa-list-alt"></i>active_Players</div>
-                <div class="menu-vievs-add"><i class="fas fa-plus"></i>add_Player</div>
+                <div class="menu-vievs-all"><i class="far fa-list-alt"></i><span class="menu-vievs-all-text">all_Players</span></div>
+                <div class="menu-vievs-active"><i class="fas fa-list-alt"></i><span class="menu-vievs-all-text">active_Players</span></div>
+                <div class="menu-vievs-add"><i class="fas fa-plus"></i><span class="menu-vievs-all-text">add_Player</span></div>
             </section>
         </section>
         <section class="setup">
-            <span class="setup-string">Number of teams</span>
-            <input type="number" class="setup-input">
-            <span class="setup-string">Number of players</span>
-            <input type="number" class="setup-input">
+            <h3 class="setup-title">team_Settings</h3>
+            <div class="setup-form">
+                <span class="setup-form-string">number_Of_Teams</span>
+                <input type="number" class="setup-form-input" placeholder="put_Number">
+            </div>
+            <div class="setup-form">
+                <span class="setup-form-string">number_Of_Players_Per_Team</span>
+                <input type="number" class="setup-form-input" placeholder="put_Number">
+            </div>
         </section>
         <section class="draw">
-            <button class="draw-button">draw!</button>
+            <button class="draw-button">draw_!</button>
         </section>
         <section class="results">
+            <h3 class="results-messageBefore">The results will be shown after the draw.</h3>
             <h3 class="results-teamName">Team 1</h3>
             <div class="results-skillRate">72%</div>
             <div class="results-prevButton"><</div>
@@ -41,6 +47,7 @@
                 <div class="results-playersCnt-player">Łukasz Błaszczuk</div>
             </div>
         </section>
+        <footer>created by Mateusz Andrzejewski</footer>
 
     </div>
     <script src="app.js"></script>
