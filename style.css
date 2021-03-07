@@ -116,7 +116,6 @@ body {
   width: 30%;
   height: 2rem;
   text-align: center;
-  color: red;
   font-size: 1.2rem;
   border-radius: 5px;
 }
@@ -253,8 +252,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   box-shadow: 0 0 4px 0 #fff;
   background-color: #000;
@@ -270,4 +269,110 @@ footer {
   width: 100%;
   font-size: 0.9rem;
   color: white;
+}
+
+/* 1/3 part modal - all_Players  */
+.modal-allPlayers {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  background: linear-gradient(
+    to bottom,
+    var(--backgroundOne) -60%,
+    var(--backgroundTwo) 120%
+  );
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px black;
+}
+.modal-allPlayers-buttonClose {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}
+.modal-allPlayers-cnt {
+  position: absolute;
+  top: 2%;
+  bottom: 2%;
+  left: 5%;
+  right: 5%;
+}
+.modal-allPlayers-cnt-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min-content;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: black;
+  font-size: 1rem;
+}
+.modal-allPlayers-cnt-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 8%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.modal-allPlayers-cnt-input::placeholder {
+  color: rgb(175, 174, 174);
+}
+.modal-allPlayers-cnt-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+  position: absolute;
+  top: 19%;
+  bottom: 10%;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  overflow-y: scroll;
+}
+.modal-allPlayers-cnt-list-title {
+  background-color: #000;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.modal-allPlayers-cnt-list-player {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 1.9rem;
+  margin: 0.3rem;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.63);
+}
+.modal-allPlayers-cnt-confirm {
+  position: absolute;
+  bottom: 0;
+  top: 92%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background-color: white;
+  border: none;
+  outline: yellow;
+  background-color: black;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 5px;
 }
