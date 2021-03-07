@@ -76,7 +76,7 @@ body {
   width: 95%;
   background-color: #000;
   width: 90%;
-  /* height: 20%; */
+  height: 25%;
   background: linear-gradient(
     to bottom,
     var(--backgroundOne) -60%,
@@ -123,3 +123,68 @@ body {
 }
 
 /*  third part - button Draw!*/
+.draw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 10%;
+  margin: 2%;
+  background: linear-gradient(
+    to bottom,
+    var(--backgroundOne) -60%,
+    var(--backgroundTwo) 120%
+  );
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px black;
+}
+.draw-button {
+  width: 90%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: #000;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+/* fourth part - Results */
+.results {
+  position: absolute;
+  top: 58%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  overflow-y: scroll;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 10px 0px white;
+}
+.results-messageBefore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* fifth part - footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  color: white;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.521);
+}
