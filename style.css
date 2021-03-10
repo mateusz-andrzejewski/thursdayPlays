@@ -370,6 +370,9 @@ footer {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.63);
 }
+.active {
+  background-color: greenyellow;
+}
 .modal-allPlayers-cnt-confirm {
   position: absolute;
   bottom: 0;

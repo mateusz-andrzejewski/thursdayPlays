@@ -76,6 +76,7 @@ class Players{
     }
 }
 const allplayers = new Players();
+
 class Menu{
     constructor(){
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
@@ -134,6 +135,9 @@ class Menu{
             const modalAll = document.createElement('div');
             modalAll.classList.add('modal-allPlayers-cnt-list-player');
             modalCnt.append(modalAll);
+            modalAll.addEventListener('click', e=>{
+                    e.target.closest('.modal-allPlayers-cnt-list-player').classList.toggle('active');  
+            })
             const playerName= document.createElement('span');
             playerName.classList.add('modal-allPlayers-cnt-list-player-name');
             playerName.innerText=el.name;
@@ -164,5 +168,6 @@ class Menu{
         })
 
     }
+
 }
 const menu = new Menu();
