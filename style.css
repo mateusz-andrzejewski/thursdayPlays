@@ -40,6 +40,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
 }
+
 .menu-views {
   display: flex;
   justify-content: space-around;
@@ -53,15 +54,19 @@ body {
   justify-content: space-around;
   align-items: center;
   font-size: 0.9rem;
+  cursor: pointer;
 }
+
 .menu-views > * > i {
   font-size: 1.7rem;
   margin-bottom: 10%;
+  
 }
 .menu-vievs-all-text {
   background-color: rgba(0, 0, 0);
   padding: 5px;
   border-radius: 2.5px;
+  
 }
 
 /* second part  - setup*/
@@ -274,7 +279,7 @@ footer {
 /* 1/3 part modal - all_Players AND 2/3 part modal - activePlayers  */
 .modal-allPlayers,
 .modal-activePlayers {
-  /* display: none; */
+  display: none;
   z-index: 1;
   position: absolute;
   top: 10%;
@@ -370,8 +375,9 @@ footer {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.63);
 }
-.active {
+.activePlayer {
   background-color: greenyellow;
+  color: black;
 }
 .modal-allPlayers-cnt-confirm {
   position: absolute;
@@ -399,7 +405,7 @@ footer {
 
 /* 3/3 part modal - addPlayer */
 .modal-addPlayer {
-  /* display: none; */
+  display: none;
   z-index: 1;
   position: absolute;
   top: 25%;
@@ -479,4 +485,7 @@ footer {
   font-size: 1.5rem;
   text-transform: uppercase;
   border-radius: 5px;
+}
+.activeModal{
+  display: block;
 }
