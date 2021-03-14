@@ -35,115 +35,11 @@
             <button class="draw-button">draw_!</button>
         </section>
         <section class="results">
-            <h3 class="results-messageBefore">The results will be shown after the draw.</h3>
-            <h3 class="results-teamName">Team 1</h3>
-            <div class="results-skillRate">72%</div>
-            <div class="results-prevButton"><i class="fas fa-chevron-circle-right"></i></div>
-            <div class="results-nextButton"><i class="fas fa-chevron-circle-right"></i></div>
-            <div class="results-playersCnt">
-                <div class="results-playersCnt-player">
-                    <span class="results-playersCnt-player-name">Mateusz Andrzejewski</span>
-                    <span class="results-playersCnt-player-position">A</span>
-                </div>
-                <div class="results-playersCnt-player">
-                    <span class="results-playersCnt-player-name">Maciek Naleśnik</span>
-                    <span class="results-playersCnt-player-position">D</span>
-                </div>
-                <div class="results-playersCnt-player">
-                    <span class="results-playersCnt-player-name">Paweł Karczewski</span>
-                    <span class="results-playersCnt-player-position">D</span>
-                </div>
-                <div class="results-playersCnt-player">
-                    <span class="results-playersCnt-player-name">Łukasz Błaszczuk</span>
-                    <span class="results-playersCnt-player-position">G</span>
-                </div>
-                <div class="results-playersCnt-player">
-                    <span class="results-playersCnt-player-name">Adam Kowalski</span>
-                    <span class="results-playersCnt-player-position">D</span>
-                </div>
-
-            </div>
+            <h3 class="results-messageBefore">The results will be ..shown after the draw.</h3>
         </section>
         <footer>created by @MateuszAndrzejewski</footer>
-
-        <section class="modal-allPlayers">
-            <div class="modal-allPlayers-buttonClose"><i class="fas fa-times-circle"></i></div>
-            <div class="modal-allPlayers-cnt">
-                <h3 class="modal-allPlayers-cnt-title">all_Players</h3>
-                <input type="search" class="modal-allPlayers-cnt-input" placeholder="find_Player">
-                <div class="modal-allPlayers-cnt-list">
-                    <h4 class="modal-allPlayers-cnt-list-title">Click to select the player</h4>
-                    <div class="modal-allPlayers-cnt-list-player">
-                        <span class="modal-allPlayers-cnt-list-player-name">Adam Kowalski</span>
-                        <span class="modal-allPlayers-cnt-list-player-position">D</span>
-                    </div>
-                    <div class="modal-allPlayers-cnt-list-player">
-                        <span class="modal-allPlayers-cnt-list-player-name">Radek Kosiński</span>
-                        <span class="modal-allPlayers-cnt-list-player-position">D</span>
-                    </div>
-                    <div class="modal-allPlayers-cnt-list-player">
-                        <span class="modal-allPlayers-cnt-list-player-name">Dawid Ptak</span>
-                        <span class="modal-allPlayers-cnt-list-player-position">D</span>
-                    </div>
-                </div>
-                <button class="modal-allPlayers-cnt-confirm">confirm_!</button>
-            </div>
-        </section>
-        <section class="modal-activePlayers">
-            <div class="modal-activePlayers-buttonClose"><i class="fas fa-times-circle"></i></div>
-            <div class="modal-activePlayers-cnt">
-                <h3 class="modal-activePlayers-cnt-title">active_Players</h3>
-                <input type="search" class="modal-activePlayers-cnt-input" placeholder="find_Player">
-                <div class="modal-activePlayers-cnt-list">
-                    <h4 class="modal-activePlayers-cnt-list-title">Click minus icon to remove the player</h4>
-                    <div class="modal-activePlayers-cnt-list-player">
-                        <span class="modal-activePlayers-cnt-list-player-name">Adam Kowalski</span>
-                        <span class="modal-activePlayers-cnt-list-player-position">D</span>
-                        <div class="modal-activePlayers-cnt-list-player-minus"><i class="fas fa-minus-square"></i></div>
-                    </div>
-                    <div class="modal-activePlayers-cnt-list-player">
-                        <span class="modal-activePlayers-cnt-list-player-name">Radek Kosiński</span>
-                        <span class="modal-activePlayers-cnt-list-player-position">D</span>
-                        <div class="modal-activePlayers-cnt-list-player-minus"><i class="fas fa-minus-square"></i></div>
-                    </div>
-                    <div class="modal-activePlayers-cnt-list-player">
-                        <span class="modal-activePlayers-cnt-list-player-name">Dawid Ptak</span>
-                        <span class="modal-activePlayers-cnt-list-player-position">D</span>
-                        <div class="modal-activePlayers-cnt-list-player-minus"><i class="fas fa-minus-square"></i></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="modal-addPlayer">
-            <div class="modal-addPlayer-buttonClose"><i class="fas fa-times-circle"></i></div>
-            <h3 class="modal-addPlayer-title">add_Player</h3>
-            <div class="modal-addPlayer-cnt">
-                <div class="modal-addPlayer-cnt-nameStack">
-                    <span class="modal-addPlayer-cnt-nameStack-fullName">full_Name</span>
-                    <input type="text" class="modal-addPlayer-cnt-nameStack-fullNameString" placeholder="put_Full_Name">
-                </div>
-                <div class="modal-addPlayer-cnt-positionStack">
-                    <span class="modal-addPlayer-cnt-positionStack-string">position (D-def, A-attc, G-goalkeeper</span>
-                    <select name="skill" id="skill" class="modal-addPlayer-cnt-positionStack-skill-options">
-                        <option value="G">G</option>
-                        <option value="D" selected>D</option>
-                        <option value="A">A</option>
-                    </select>
-                </div>
-                <div class="modal-addPlayer-cnt-skillStack">
-                    <span class="modal-addPlayer-cnt-skillStack-string">skill_Rate (1-bottom, 5-top)</span>
-                    <select name="skill" id="skill" class="modal-addPlayer-cnt-positionStack-skill-options">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3" selected>3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <button class="modal-addPlayer-add">add_!</button>
-            </div>
-        </section>
     </div>
-    <script src="app.js"></script>
+    <script src="players.js" type="module"></script>
+    <script src="renderModal.js" type="module"></script>
 </body>
 </html>
