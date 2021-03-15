@@ -58,12 +58,12 @@ export class RenderModalActivePlayers  {
             modalActivePlayersCnt.appendChild(modalActivePlayersCntTitle);
 
             //utworzenie pola wyszukiwania
-            const modalActivePlayersCntInput = document.createElement('input');
-            modalActivePlayersCntInput.classList.add('modal-allPlayers-cnt-input');
-            modalActivePlayersCntInput.placeholder = 'find_Player';
-            modalActivePlayersCntInput.type = 'search';
-            modalActivePlayersCnt.appendChild(modalActivePlayersCntInput);
-            this.input = modalActivePlayersCntInput;
+            // const modalActivePlayersCntInput = document.createElement('input');
+            // modalActivePlayersCntInput.classList.add('modal-allPlayers-cnt-input');
+            // modalActivePlayersCntInput.placeholder = 'find_Player';
+            // modalActivePlayersCntInput.type = 'search';
+            // modalActivePlayersCnt.appendChild(modalActivePlayersCntInput);
+            // this.input = modalActivePlayersCntInput;
 
             //utworzenie kontenera na liste zawodników
             const modalActivePlayersCntList = document.createElement('div');
