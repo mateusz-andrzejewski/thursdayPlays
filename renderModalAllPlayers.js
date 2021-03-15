@@ -155,6 +155,8 @@ export class RenderModalAllPlayers{
       modal.classList.remove('activeModal');
        //przywrócenie wyraźnego tła
       this.cnt.classList.remove('nonActive');
+      //usunięcie modala
+      modal.remove();
 
 
 
