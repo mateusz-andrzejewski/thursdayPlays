@@ -1,4 +1,5 @@
 import {Players} from './players.js';
+import {RenderModalActivePlayers} from './rendermodalActivePlayers.js';
 
 export class RenderModalAllPlayers{
     constructor(){
@@ -158,9 +159,10 @@ export class RenderModalAllPlayers{
       //usunięcie modala
       modal.remove();
 
-
-
       console.log(this.playersActiveStatus);
+
+      return new RenderModalActivePlayers(this.playersActiveStatus);
+
       })
       
     }
@@ -182,6 +184,7 @@ export class RenderModalAllPlayers{
         })
 
     }
+
 }
 
 const renderModals = new RenderModalAllPlayers();
