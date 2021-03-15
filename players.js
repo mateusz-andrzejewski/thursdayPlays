@@ -72,6 +72,11 @@
                 skillRate: '3'
             },
             {
+                name: 'Radosław Kowynia',
+                position: 'A',
+                skillRate: '4'
+            },
+            {
                 name: 'Arkadiusz Krawczyk',
                 position: 'D',
                 skillRate: '2'

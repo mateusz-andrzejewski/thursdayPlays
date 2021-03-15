@@ -1,22 +1,25 @@
 import {Players} from './players.js';
+import {RenderModalActivePlayers} from './rendermodalActivePlayers.js';
 
-class RenderModals{
+export class RenderModalAllPlayers{
     constructor(){
         this.instanceOfPlayers = new Players();
         this.cnt = document.querySelector('.cnt');
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
-        this.actPlayersIcon = document.querySelector('.menu-vievs-active');
-        this.addPlayerIcon = document.querySelector('.menu-vievs-add');
 
         this.closeButton = null;
         this.modalAllPlayersCntList = null;
         this.playersActiveStatus = [];
         this.confirmActiveButton = null;
+        this.input = null
 
         this.showAllPlayersModal();
     }
     showAllPlayersModal(){
         this.allPlayersIcon.addEventListener('click', e=>{
+            //sprawdzenie czy taki modal już istnieje
+            if(document.querySelector('.modal-allPlayers')) return;
+
             //utworzenie sekcji ogólnej
             const modalAllPlayers = document.createElement('section');
             document.body.appendChild(modalAllPlayers);
@@ -57,6 +60,7 @@ class RenderModals{
             modalAllPlayersCntInput.placeholder = 'find_Player';
             modalAllPlayersCntInput.type = 'search';
             modalAllPlayersCnt.appendChild(modalAllPlayersCntInput);
+            this.input = modalAllPlayersCntInput;
             //utworzenie listy zawodników
             const modalAllPlayersCntList = document.createElement('div');
             modalAllPlayersCntList.classList.add('modal-allPlayers-cnt-list');
@@ -84,6 +88,9 @@ class RenderModals{
             //wywołanie funkcji potwierdzającej aktywnych zawodników
             this.confirmActivePlayers();
 
+            //wywołanie funkcji wyszukiwującej graczy
+            this.findPlayer();
+
         })
 
     }
@@ -94,6 +101,8 @@ class RenderModals{
             modal.classList.remove('activeModal');
             //przywrócenie wyraźnego tła
             this.cnt.classList.remove('nonActive');
+            //usunięcie elementu modal(czyli sekcji)
+            modal.remove();
         })
     }
 
@@ -147,13 +156,35 @@ class RenderModals{
       modal.classList.remove('activeModal');
        //przywrócenie wyraźnego tła
       this.cnt.classList.remove('nonActive');
-
-
+      //usunięcie modala
+      modal.remove();
 
       console.log(this.playersActiveStatus);
+
+      return new RenderModalActivePlayers(this.playersActiveStatus);
+
       })
       
     }
+
+    findPlayer(){
+        this.input.addEventListener('input', e=>{
+            const val = this.input.value.toLocaleLowerCase();
+            const elems = this.modalAllPlayersCntList.querySelectorAll('.modal-allPlayers-cnt-list-player-name');
+
+            for(const el of elems){
+                const text = el.textContent.toLocaleLowerCase();
+
+                if(text.includes(val)){
+                    el.closest('.modal-allPlayers-cnt-list-player').style.setProperty('display', "");
+                }else{
+                    el.closest('.modal-allPlayers-cnt-list-player').style.setProperty('display', "none")
+                }
+            }
+        })
+
+    }
+
 }
 
-const renderModals = new RenderModals();
+const renderModals = new RenderModalAllPlayers();
