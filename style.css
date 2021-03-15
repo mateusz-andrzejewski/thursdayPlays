@@ -383,6 +383,7 @@ footer {
 .activePlayer {
   background-color: greenyellow;
   color: black;
+  box-shadow: 0 0 10px 0 goldenrod;
 }
 .modal-allPlayers-cnt-confirm {
   position: absolute;

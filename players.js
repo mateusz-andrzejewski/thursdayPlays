@@ -43,8 +43,8 @@
             },
             {
                 name: 'Mateusz Jeż',
-                position: '1',
-                skillRate: 'A'
+                position: 'A',
+                skillRate: '1'
             },
             {
                 name: 'Grzegorz Jóźwik',
@@ -73,8 +73,8 @@
             },
             {
                 name: 'Arkadiusz Krawczyk',
-                position: '2',
-                skillRate: 'D'
+                position: 'D',
+                skillRate: '2'
             },
             {
                 name: 'Karol Krzyżankiewicz',
@@ -135,6 +135,11 @@
                 name: 'Wojciech Trojanowski',
                 position: 'A',
                 skillRate: '1'
+            },
+            {
+                name: 'Jakub Umywalnik',
+                position: 'A',
+                skillRate: '2'
             },
             {
                 name: 'Kamil Wawoczny',
