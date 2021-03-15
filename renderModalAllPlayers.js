@@ -1,12 +1,10 @@
 import {Players} from './players.js';
 
-export class RenderModals{
+export class RenderModalAllPlayers{
     constructor(){
         this.instanceOfPlayers = new Players();
         this.cnt = document.querySelector('.cnt');
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
-        this.actPlayersIcon = document.querySelector('.menu-vievs-active');
-        this.addPlayerIcon = document.querySelector('.menu-vievs-add');
 
         this.closeButton = null;
         this.modalAllPlayersCntList = null;
@@ -18,6 +16,9 @@ export class RenderModals{
     }
     showAllPlayersModal(){
         this.allPlayersIcon.addEventListener('click', e=>{
+            //sprawdzenie czy taki modal już istnieje
+            if(document.querySelector('.modal-allPlayers')) return;
+
             //utworzenie sekcji ogólnej
             const modalAllPlayers = document.createElement('section');
             document.body.appendChild(modalAllPlayers);
@@ -99,6 +100,8 @@ export class RenderModals{
             modal.classList.remove('activeModal');
             //przywrócenie wyraźnego tła
             this.cnt.classList.remove('nonActive');
+            //usunięcie elementu modal(czyli sekcji)
+            modal.remove();
         })
     }
 
@@ -179,4 +182,4 @@ export class RenderModals{
     }
 }
 
-const renderModals = new RenderModals();
+const renderModals = new RenderModalAllPlayers();
