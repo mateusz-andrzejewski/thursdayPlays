@@ -1,6 +1,6 @@
 import {Players} from './players.js';
 
-class RenderModals{
+export class RenderModals{
     constructor(){
         this.instanceOfPlayers = new Players();
         this.cnt = document.querySelector('.cnt');
@@ -12,6 +12,7 @@ class RenderModals{
         this.modalAllPlayersCntList = null;
         this.playersActiveStatus = [];
         this.confirmActiveButton = null;
+        this.input = null
 
         this.showAllPlayersModal();
     }
@@ -57,6 +58,7 @@ class RenderModals{
             modalAllPlayersCntInput.placeholder = 'find_Player';
             modalAllPlayersCntInput.type = 'search';
             modalAllPlayersCnt.appendChild(modalAllPlayersCntInput);
+            this.input = modalAllPlayersCntInput;
             //utworzenie listy zawodników
             const modalAllPlayersCntList = document.createElement('div');
             modalAllPlayersCntList.classList.add('modal-allPlayers-cnt-list');
@@ -83,6 +85,9 @@ class RenderModals{
 
             //wywołanie funkcji potwierdzającej aktywnych zawodników
             this.confirmActivePlayers();
+
+            //wywołanie funkcji wyszukiwującej graczy
+            this.findPlayer();
 
         })
 
@@ -153,6 +158,24 @@ class RenderModals{
       console.log(this.playersActiveStatus);
       })
       
+    }
+
+    findPlayer(){
+        this.input.addEventListener('input', e=>{
+            const val = this.input.value.toLocaleLowerCase();
+            const elems = this.modalAllPlayersCntList.querySelectorAll('.modal-allPlayers-cnt-list-player-name');
+
+            for(const el of elems){
+                const text = el.textContent.toLocaleLowerCase();
+
+                if(text.includes(val)){
+                    el.closest('.modal-allPlayers-cnt-list-player').style.setProperty('display', "");
+                }else{
+                    el.closest('.modal-allPlayers-cnt-list-player').style.setProperty('display', "none")
+                }
+            }
+        })
+
     }
 }
 
