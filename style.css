@@ -495,5 +495,5 @@ footer {
   display: block;
 }
 .nonActive{
-  filter: blur(6px);
+  filter: blur(16px);
 }
