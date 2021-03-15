@@ -13,9 +13,11 @@ class RenderModals{
         this.allPlayersIcon.addEventListener('click', e=>{
             //utworzenie sekcji ogólnej
             const modalAllPlayers = document.createElement('section');
-            this.cnt.appendChild(modalAllPlayers);
+            document.body.appendChild(modalAllPlayers);
             modalAllPlayers.classList.add('modal-allPlayers');
             modalAllPlayers.classList.add('activeModal');
+            //rozmazanie tła
+            this.cnt.classList.add('nonActive');
             //utworzenie guzika
             
         })
