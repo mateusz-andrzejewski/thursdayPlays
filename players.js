@@ -1,6 +1,7 @@
-//  import {RenderModalAllPlayers} from './renderModalAllPlayers.js'
+ import {RenderModalAllPlayers} from './renderModalAllPlayers.js'; //ew us
+ import {RenderModalAddPlayer} from './renderModalAddPlayer.js'; //ew us
  export class Players{
-    constructor(){
+    constructor(update){
         this.players = [
             {
                 name: 'Mateusz Andrzejewski',
@@ -159,15 +160,22 @@
             },
 
         ];
-        // this.update = update;    
+        this.update = update; //ew us
+        this.checkUpdate();   //ew us
     }
 
-    // checkUpdate(){
-    //     if(this.update){
-    //         console.log(this.update);
-    //         return new RenderModalAllPlayers(this.update)
-    //     }
-    // }
+    checkUpdate(){ //ew us
+        if(this.update){
+            console.log('update');
+            console.log(this.update);
+            new RenderModalAddPlayer(this.update); //ew us
+            new RenderModalAllPlayers(this.update) //ew us
+        } else{
+            console.log('didnt update');
+            new RenderModalAddPlayer(this.players); //ew us
+            new RenderModalAllPlayers(this.players); //ew us
+        } //ew us
+    }
 
 }
 const allplayers = new Players();

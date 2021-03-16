@@ -1,13 +1,12 @@
-import {Players} from './players.js';
-import {RenderModalAllPlayers} from './renderModalAllPlayers.js';
+import {Players} from './players.js'; //ew us
 
 export class RenderModalAddPlayer{
-    constructor(){
+    constructor(arrOfAllPlayers){
     this.cnt = document.querySelector('.cnt');
     this.iconAddPlayer = document.querySelector('.menu-vievs-add');
     this.closeButton=null;
     
-    this.instanceOfAllPlayers = new Players().players;
+    this.instanceOfAllPlayers = arrOfAllPlayers;
     this.modalAddPlayerCntNameStackFullNameString = null;
     this.modalAddPlayerCntPositionStackPositionOptions = null;
     this.modalAddPlayerCntPositionStackSkillOptions = null;
@@ -72,7 +71,7 @@ export class RenderModalAddPlayer{
             modalAddPlayerCntNameStackFullNameString.placeholder = 'put_Full_Name';
             modalAddPlayerCntNameStackFullNameString.classList.add('modal-addPlayer-cnt-nameStack-fullNameString');
             modalAddPlayerCntNameStack.appendChild(modalAddPlayerCntNameStackFullNameString);
-            this.modalAddPlayerCntNameStackFullNameString = modalAddPlayerCntNameStackFullNameString.value;
+            
             
             //utworzenie kontenera na pozycje
             const modalAddPlayerCntPositionStack = document.createElement('div');
@@ -89,7 +88,7 @@ export class RenderModalAddPlayer{
             modalAddPlayerCntPositionStackPositionOptions.setAttribute('id', 'position');
             modalAddPlayerCntPositionStackPositionOptions.classList.add('modal-addPlayer-cnt-positionStack-positon-options');
             modalAddPlayerCntPositionStack.appendChild(modalAddPlayerCntPositionStackPositionOptions);
-            this.modalAddPlayerCntPositionStackPositionOptions=modalAddPlayerCntPositionStackPositionOptions;
+
             //utworzenie opcji do selecta
             for(let i=0;i<3;i++){
                 const arr = ['G','D','A'];
@@ -115,7 +114,7 @@ export class RenderModalAddPlayer{
             modalAddPlayerCntPositionStackSkillOptions.name='skill';
             modalAddPlayerCntPositionStackSkillOptions.classList.add('modal-addPlayer-cnt-positionStack-skill-options');
             modalAddPlayerCntSkillStack.appendChild(modalAddPlayerCntPositionStackSkillOptions);
-            this.modalAddPlayerCntPositionStackSkillOptions = modalAddPlayerCntPositionStackSkillOptions;
+            
             //utworzenie opcji dla selecta
             for(let i=1;i<5;i++){
                 const option = document.createElement('option');
@@ -132,8 +131,13 @@ export class RenderModalAddPlayer{
             modalAddPlayerCnt.appendChild(modalAddPlayerAdd);
             this.modalAddPlayerAdd = modalAddPlayerAdd;
 
+            //utworzenie danych do wysyłki
+            this.modalAddPlayerCntNameStackFullNameString = modalAddPlayerCntNameStackFullNameString;
+            this.modalAddPlayerCntPositionStackPositionOptions = modalAddPlayerCntPositionStackPositionOptions;
+            this.modalAddPlayerCntPositionStackSkillOptions = modalAddPlayerCntPositionStackSkillOptions;
+
             //wywołanie funkcji dodającej gracza
-            this.addNewPlayer(this.modalAddPlayerCntNameStackFullNameString, this.modalAddPlayerCntPositionStackPositionOptions, this.modalAddPlayerCntPositionStackSkillOptions);
+            this.addNewPlayer()
         })
     }
     closeModal(){
@@ -146,13 +150,19 @@ export class RenderModalAddPlayer{
             modal.remove();
         }); 
     }
-
-    addNewPlayer(fullname, positionOnPitch, skillRatio){
+    // test(){
+    //     this.modalAddPlayerAdd.addEventListener('click', e=>{
+    //         console.log(this.modalAddPlayerCntNameStackFullNameString.value, this.modalAddPlayerCntPositionStackPositionOptions.value, this.modalAddPlayerCntPositionStackSkillOptions.value)
+    //     })
+ 
+    
+    addNewPlayer(){
         this.modalAddPlayerAdd.addEventListener('click', e=>{
+            if(this.modalAddPlayerCntNameStackFullNameString.value.length===0 || this.modalAddPlayerCntPositionStackPositionOptions.value.length===0 ||  this.modalAddPlayerCntPositionStackSkillOptions.value.length===0) return window.alert('Please put all info!');
             this.instanceOfAllPlayers.push({
-                name: fullname,
-                position: positionOnPitch,
-                skillRate: skillRatio
+                name: this.modalAddPlayerCntNameStackFullNameString.value,
+                position: this.modalAddPlayerCntPositionStackPositionOptions.value,
+                skillRate: this.modalAddPlayerCntPositionStackSkillOptions.value
             })
         const modal = document.querySelector('.activeModal');
         modal.classList.remove('activeModal');
@@ -162,10 +172,7 @@ export class RenderModalAddPlayer{
         modal.remove();
         console.log(this.instanceOfAllPlayers);
 
-        // return new Players(this.instanceOfAllPlayers).checkUpdate();    
+        return new Players(this.instanceOfAllPlayers);    
         })
-    
     }
 }
-
-const addPlayer = new RenderModalAddPlayer();
