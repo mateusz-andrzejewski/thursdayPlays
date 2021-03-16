@@ -467,6 +467,9 @@ footer {
 .modal-addPlayer-cnt-nameStack-fullName,
 .modal-addPlayer-cnt-positionStack-string,
 .modal-addPlayer-cnt-skillStack-string {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -476,9 +479,11 @@ footer {
 .modal-addPlayer-cnt-nameStack-fullNameString {
   text-align: center;
   height: 1.5rem;
+  /* width: 60%; */
 }
 .modal-addPlayer-cnt-nameStack-fullNameString::placeholder {
   color: rgb(175, 174, 174);
+  text-align: center;
 }
 .modal-addPlayer-add {
   width: 60%;
@@ -497,4 +502,12 @@ footer {
 }
 .nonActive{
   filter: blur(16px);
+}
+.modal-addPlayer-cnt-positionStack-positon-options, .modal-addPlayer-cnt-positionStack-skill-options{
+  display: block;
+  width: 5%vw;
+  padding: 5px;
+  background-color: white;
+  color:rgb(175, 174, 174);
+  text-align: center;
 }

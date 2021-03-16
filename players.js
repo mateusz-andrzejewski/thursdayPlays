@@ -1,3 +1,4 @@
+//  import {RenderModalAllPlayers} from './renderModalAllPlayers.js'
  export class Players{
     constructor(){
         this.players = [
@@ -157,8 +158,16 @@
                 skillRate: '1'
             },
 
-        ];    
+        ];
+        // this.update = update;    
     }
+
+    // checkUpdate(){
+    //     if(this.update){
+    //         console.log(this.update);
+    //         return new RenderModalAllPlayers(this.update)
+    //     }
+    // }
 
 }
 const allplayers = new Players();

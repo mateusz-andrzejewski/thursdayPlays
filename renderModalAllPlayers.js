@@ -1,5 +1,5 @@
 import {Players} from './players.js';
-import {RenderModalActivePlayers} from './rendermodalActivePlayers.js';
+import {RenderModalActivePlayers} from './renderModalActivePlayers.js';
 
 export class RenderModalAllPlayers{
     constructor(){
