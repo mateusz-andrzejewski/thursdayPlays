@@ -1,12 +1,17 @@
-export class RenderModalAllPlayers{
+import {Players} from './players.js';
+import {RenderModalAllPlayers} from './renderModalAllPlayers.js';
+
+export class RenderModalAddPlayer{
     constructor(){
     this.cnt = document.querySelector('.cnt');
     this.iconAddPlayer = document.querySelector('.menu-vievs-add');
     this.closeButton=null;
+    
+    this.instanceOfAllPlayers = new Players().players;
     this.modalAddPlayerCntNameStackFullNameString = null;
     this.modalAddPlayerCntPositionStackPositionOptions = null;
     this.modalAddPlayerCntPositionStackSkillOptions = null;
-    this.modalAddPlayerAdd = null;
+    this.modalAddPlayerAdd = null;//btn
 
     this.showModal();
     }
@@ -127,6 +132,8 @@ export class RenderModalAllPlayers{
             modalAddPlayerCnt.appendChild(modalAddPlayerAdd);
             this.modalAddPlayerAdd = modalAddPlayerAdd;
 
+            //wywołanie funkcji dodającej gracza
+            this.addNewPlayer(this.modalAddPlayerCntNameStackFullNameString, this.modalAddPlayerCntPositionStackPositionOptions, this.modalAddPlayerCntPositionStackSkillOptions);
         })
     }
     closeModal(){
@@ -139,6 +146,26 @@ export class RenderModalAllPlayers{
             modal.remove();
         }); 
     }
+
+    addNewPlayer(fullname, positionOnPitch, skillRatio){
+        this.modalAddPlayerAdd.addEventListener('click', e=>{
+            this.instanceOfAllPlayers.push({
+                name: fullname,
+                position: positionOnPitch,
+                skillRate: skillRatio
+            })
+        const modal = document.querySelector('.activeModal');
+        modal.classList.remove('activeModal');
+        //przywrócenie wyraźnego tła
+        this.cnt.classList.remove('nonActive');
+        //usunięcie elementu modal(czyli sekcji)
+        modal.remove();
+        console.log(this.instanceOfAllPlayers);
+
+        // return new Players(this.instanceOfAllPlayers).checkUpdate();    
+        })
+    
+    }
 }
 
-const addPlayer = new RenderModalAllPlayers();
+const addPlayer = new RenderModalAddPlayer();
