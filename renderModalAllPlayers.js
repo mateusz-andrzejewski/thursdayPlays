@@ -2,8 +2,8 @@ import {Players} from './players.js';
 import {RenderModalActivePlayers} from './renderModalActivePlayers.js';
 
 export class RenderModalAllPlayers{
-    constructor(){
-        this.instanceOfPlayers = new Players();
+    constructor(arrOfAllPlayers){
+        this.instanceOfPlayers = arrOfAllPlayers; ////ew us
         this.cnt = document.querySelector('.cnt');
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
 
@@ -107,7 +107,7 @@ export class RenderModalAllPlayers{
     }
 
     addAllPlayersToModal(){
-        this.instanceOfPlayers.players.forEach(el=>{
+        this.instanceOfPlayers.forEach(el=>{
             //utworzenie pojemnika na imię i pozycję zawodnika
             const modalAllPlayersCntListPlayer = document.createElement('div');
             modalAllPlayersCntListPlayer.classList.add('modal-allPlayers-cnt-list-player');
@@ -187,4 +187,3 @@ export class RenderModalAllPlayers{
 
 }
 
-const renderModals = new RenderModalAllPlayers();

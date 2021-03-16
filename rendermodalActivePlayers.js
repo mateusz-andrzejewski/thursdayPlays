@@ -1,6 +1,3 @@
-// import {Players} from './players.js';
-import {RenderModalAllPlayers} from './renderModalAllPlayers.js';
-
 export class RenderModalActivePlayers  {
     constructor(arrActivePlayers){
         this.arrActivePlayers = arrActivePlayers;
@@ -147,4 +144,3 @@ export class RenderModalActivePlayers  {
 
 }
 
-// const activePlayers = new RenderModalActivePlayers();
