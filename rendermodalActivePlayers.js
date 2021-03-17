@@ -1,3 +1,4 @@
+import {Draw} from './draw.js'
 export class RenderModalActivePlayers  {
     constructor(arrActivePlayers){
         this.arrActivePlayers = arrActivePlayers;
@@ -17,7 +18,7 @@ export class RenderModalActivePlayers  {
             if(document.querySelector('.modal-activePlayers')) return;
 
             //pobranie aktualnej listy aktywnych zawodników
-            console.log(this.arrActivePlayers);
+            // console.log(this.arrActivePlayers);
 
             //utworzenie sekcji ogólnej
             const modalActivePlayers = document.createElement('section');
@@ -79,6 +80,9 @@ export class RenderModalActivePlayers  {
 
             //wywołanie funkcji usuwającej graczy z listy aktywnych graczy
             this.deleteActivePlayer()
+
+            //utworzenie klasy Draw
+             return new Draw(this.arrActivePlayers);
         })
     }
     closeModal(){
@@ -132,11 +136,12 @@ export class RenderModalActivePlayers  {
                     if(el.name === nameElement){
                         const index = this.arrActivePlayers.indexOf(el);
                         this.arrActivePlayers.splice(index, 1);
-                        console.log(el.name);
+                        // console.log(el.name);
                     }
                 })
                 el.closest('.modal-activePlayers-cnt-list-player').remove();
-                console.log(this.arrActivePlayers);
+                return new Draw(this.arrActivePlayers);
+
             })
         })
         

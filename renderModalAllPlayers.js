@@ -159,7 +159,7 @@ export class RenderModalAllPlayers{
       //usunięcie modala
       modal.remove();
 
-      console.log(this.playersActiveStatus);
+    //   console.log(this.playersActiveStatus);
 
       return new RenderModalActivePlayers(this.playersActiveStatus);
 
