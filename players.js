@@ -90,13 +90,13 @@
             },
             {
                 name: 'Piotr Kuźniewicz',
-                position: 'D',
-                skillRate: '2'
+                position: 'A',
+                skillRate: '1'
             },
             {
                 name: 'Michał Kuźniewicz',
-                position: 'A',
-                skillRate: '1'
+                position: 'D',
+                skillRate: '2'
             },
             {
                 name: 'Kamil Limok',

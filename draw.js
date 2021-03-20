@@ -6,6 +6,7 @@ export class Draw{
         this.teamNumber = null;
         this.drawBtn = document.querySelector('.draw');
         this.comparedArr = null;
+        this.arrTeams=null;
 
         this.showResults()
     }
@@ -39,17 +40,68 @@ export class Draw{
         return this.comparedArr = comparedArr;
     }
     drawingAlgorithm(arr, teams){
-        //ustalenie ilości zawodników w drużynie na podstawie liczby drużyn i ilości aktywnych zaw.
+        //ustalenie czy będzie zawodnik dodatkowy 1=tak || 0=nie.
         const additionalPlayer = arr.length/teams%2>0 ? 1 : 0;
+        //ustalenie ilości zawodników w drużynie na podstawie liczby drużyn i ilości aktywnych zaw.
         const playersInTeam = Math.floor(arr.length/teams);
-        console.log(playersInTeam, additionalPlayer);
         //podzielenie graczy na poszczególne tablice
-        const rating4 = arr.filter(el=>el.skillRate==='4');
-        const rating3 = arr.filter(el=>el.skillRate==='3');
-        const rating2 = arr.filter(el=>el.skillRate==='2');
-        const rating1 = arr.filter(el=>el.skillRate==='1');
+        const posG = arr.filter(el=>el.position==='G');
+        const posD = arr.filter(el=>el.position==='D');
+        const posA = arr.filter(el=>el.position==='A');
 
+        //główna tablica  do przechowująca drużyny
+        const arrTeams=[];
+        this.arrTeams = arrTeams;
+        //utworzenie drużyn dla Tablicy arrTeams
+        this.teamCreator(teams); //zwraca do arrTeams odp ilość podtablic w formacie [team1, [squad...]]
+        //ustalenie ile max 'G', 'D', 'A' może być w squadzie
+        const maxGInSquad = this.maxPosInSquad(posG,teams);
+        const maxDInSquad = this.maxPosInSquad(posD,teams);
+        const maxAInSquad = this.maxPosInSquad(posA,teams);
+        // rozdzielenie
+        let iterA = 0;
+        while(posA.length){
+            if(teams>iterA){
+                this.arrTeams[iterA][1].push(posA[0]);
+                this.deletePlayerFromArr(posA,0)
+                iterA++;
+            }else{
+                iterA=0;
+                this.arrTeams[iterA][1].push(posA[0]);
+                this.deletePlayerFromArr(posA,0)
+                iterA++;
+            }
 
-        
+        }
+        console.log(this.arrTeams);
+    }
+    teamCreator(numberOfTeams){
+        for(let i=0; i<numberOfTeams;i++){
+            const team = [];
+            const name = `Team ${i+1}`;
+            const squad = [];
+            team.push(name);
+            team.push(squad);
+            this.arrTeams.push(team)
+        }
+    }
+    randomizer(max){
+        return Math.floor(Math.random()*(max-0+1))+0;
+    }
+    checkHowManyPosAlreadyInTeam(arr, position, maxPosInSquad){
+        for(const el of arr){
+            const countPlayersAtThePosition = el[1].filter(item=>item.position=== position).length
+            if(countPlayersAtThePosition>maxPosInSquad){
+                return 'nok';
+            }else{
+                return 'ok';
+            }
+        }    
+    }
+    deletePlayerFromArr(arr, index){
+        return arr.splice(index,1)
+    }
+    maxPosInSquad(posArr, numberOfTeams){
+        return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
     }
 }
