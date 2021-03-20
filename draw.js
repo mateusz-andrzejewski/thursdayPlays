@@ -58,22 +58,27 @@ export class Draw{
         const maxGInSquad = this.maxPosInSquad(posG,teams);
         const maxDInSquad = this.maxPosInSquad(posD,teams);
         const maxAInSquad = this.maxPosInSquad(posA,teams);
-        // rozdzielenie
-        let iterA = 0;
-        while(posA.length){
-            if(teams>iterA){
-                this.arrTeams[iterA][1].push(posA[0]);
-                this.deletePlayerFromArr(posA,0)
-                iterA++;
-            }else{
-                iterA=0;
-                this.arrTeams[iterA][1].push(posA[0]);
-                this.deletePlayerFromArr(posA,0)
-                iterA++;
-            }
+        // rozdzielenie Napastinków
+        // let iterA = 0;
+        // while(posA.length){
+        //     if(teams>iterA){
+        //         this.arrTeams[iterA][1].push(posA[0]);
+        //         this.deletePlayerFromArr(posA,0)
+        //         iterA++;
+        //     }else{
+        //         iterA=0;
+        //         this.arrTeams[iterA][1].push(posA[0]);
+        //         this.deletePlayerFromArr(posA,0)
+        //         iterA++;
+        //     }
+        // }
 
-        }
+        this.crossing(teams, posA);
+        this.crossing(teams, posD);
+        this.crossing(teams, posG)
+
         console.log(this.arrTeams);
+
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -103,5 +108,20 @@ export class Draw{
     }
     maxPosInSquad(posArr, numberOfTeams){
         return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
+    }
+    crossing(numberOfTeams, arrPos){
+        let iter = 0;
+        while(arrPos.length){
+            if(numberOfTeams>iter){
+                this.arrTeams[iter][1].push(arrPos[0]);
+                this.deletePlayerFromArr(arrPos,0)
+                iter++;
+            }else{
+                iter=0;
+                this.arrTeams[iter][1].push(arrPos[0]);
+                this.deletePlayerFromArr(arrPos,0)
+                iter++;
+            }
+        }
     }
 }
