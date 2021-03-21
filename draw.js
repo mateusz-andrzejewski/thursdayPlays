@@ -59,18 +59,8 @@ export class Draw{
         const maxDInSquad = this.maxPosInSquad(posD,teams);
         const maxAInSquad = this.maxPosInSquad(posA,teams);
         // rozdzielenie (crossing) zawodników do osobnych drużyn
-        this.crossing(teams, this.arrActivePlayers.length, posA, posD, posG);
-        // this.crossing(teams, posD);
-        // this.crossing(teams, posG)
+        this.crossing(teams, posA, posD, posG);
         console.log(this.arrTeams);
-        //rozdzielenie (crossing) zawodników tak aby w każdej z drużyn była ta sama liczba graczy;
-        // this.balancingTeamNumbers(playersInTeam, this.arrTeams)
-        // for(const team of this.arrTeams){
-        //     if(team[1].length>playersInTeam){
-        //         team[team.length-1]
-        //     };
-        // }
-
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -101,7 +91,7 @@ export class Draw{
     maxPosInSquad(posArr, numberOfTeams){
         return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
     }
-    crossing(numberOfTeams, numberActPlayers, posA, posD, posG){
+    crossing(numberOfTeams, posA, posD, posG){
         let iterator = 0;
         while(posA.length){
             if(numberOfTeams>iterator){

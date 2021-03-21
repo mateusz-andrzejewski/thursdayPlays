@@ -150,10 +150,7 @@ export class RenderModalAddPlayer{
             modal.remove();
         }); 
     }
-    // test(){
-    //     this.modalAddPlayerAdd.addEventListener('click', e=>{
-    //         console.log(this.modalAddPlayerCntNameStackFullNameString.value, this.modalAddPlayerCntPositionStackPositionOptions.value, this.modalAddPlayerCntPositionStackSkillOptions.value)
-    //     })
+ 
  
     
     addNewPlayer(){

@@ -12,6 +12,7 @@ export class RenderModalAllPlayers{
         this.playersActiveStatus = [];
         this.confirmActiveButton = null;
         this.input = null
+        this.playersCounter = null;
 
         this.showAllPlayersModal();
     }
@@ -43,6 +44,13 @@ export class RenderModalAllPlayers{
 
             //wywołanie funkcji zamykającej oczekującej na click
             this.closeModal();
+
+            //utworzenie licznika aktywnych graczy
+             const playersCounter = document.createElement('div');
+             playersCounter.textContent=0;
+             playersCounter.classList.add('modal-allPlayers-playerCounter');
+             modalAllPlayers.appendChild(playersCounter);
+             this.playersCounter=playersCounter;
 
             //utworzenie Pojemnika na wszystkich zawodników
             const modalAllPlayersCnt = document.createElement('div');
@@ -90,6 +98,8 @@ export class RenderModalAllPlayers{
 
             //wywołanie funkcji wyszukiwującej graczy
             this.findPlayer();
+                    //wywołanie funkcji aktywującej graczy
+        this.addActiveStatus();
 
         })
 
@@ -126,16 +136,16 @@ export class RenderModalAllPlayers{
 
         })
 
-        //wywołanie funkcji aktywującej graczy
-        this.addActiveStatus();
-
     }
 
     addActiveStatus(){
        const allPlayers =  [...this.modalAllPlayersCntList.querySelectorAll('.modal-allPlayers-cnt-list-player')];
        allPlayers.forEach(el=> el.addEventListener('click', e=>{
            el.classList.toggle('activePlayer');
+            //wywołanie funkcji zliczającej aktywnych graczy
+            this.countPlayers();
        }))
+
     }
 
     confirmActivePlayers(){
@@ -183,6 +193,11 @@ export class RenderModalAllPlayers{
             }
         })
 
+    }
+
+    countPlayers(){
+        const value = this.modalAllPlayersCntList.getElementsByClassName('activePlayer').length
+        this.playersCounter.textContent = value;
     }
 
 }
