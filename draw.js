@@ -7,6 +7,7 @@ export class Draw{
         this.drawBtn = document.querySelector('.draw');
         this.comparedArr = null;
         this.arrTeams=null;
+        this.teamsSkillRates = [];
 
         this.showResults()
     }
@@ -61,8 +62,16 @@ export class Draw{
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
         console.log(this.arrTeams);
-        this.teamSkillRating(this.arrTeams, 0);
-        this.teamSkillRating(this.arrTeams, 1);
+
+        //obliczenie avg drużyn
+        let itAvg = 0;
+        for(const team of this.arrTeams){
+            this.teamSkillRating(this.arrTeams, itAvg);
+            itAvg++
+        }
+        //sprawdzenie średnich odchyleń w średnich
+        this.teamSkillDif(this.teamsSkillRates)
+
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -151,7 +160,17 @@ export class Draw{
         const sRofTeam = [];
         arrTeams[whichTeam][1].forEach(el=>sRofTeam.push(el.skillRate));
         const avg =((sRofTeam.reduce((prev, next)=> prev * 1 + next * 1) / (arrTeams[whichTeam][1].length * 4))*100).toFixed(1);
+        this.teamsSkillRates.push(Number(avg));
+        console.log(avg);
         return avg
+    }
+    teamSkillDif(teamSkillArr){
+        const max = Math.max(...teamSkillArr);
+        const min = Math.min(...teamSkillArr);
+        const maxIndex = teamSkillArr.indexOf(max);
+        const minIndex = teamSkillArr.indexOf(min);
+        console.log(max, min);
+        console.log(maxIndex, minIndex);
     }
 }
 
