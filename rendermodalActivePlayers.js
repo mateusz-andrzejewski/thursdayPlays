@@ -7,6 +7,7 @@ export class RenderModalActivePlayers  {
         this.closeButton = null;
         this.modalActivePlayersCntList = null;
         this.minusIcon = null;
+        this.playersCounter=null;
         
 
         this.showActivePlayersModal();
@@ -16,9 +17,6 @@ export class RenderModalActivePlayers  {
         this.actPlayersIcon.addEventListener('click', e=>{
             //sprawdzenie czy taki modal już istnieje
             if(document.querySelector('.modal-activePlayers')) return;
-
-            //pobranie aktualnej listy aktywnych zawodników
-            // console.log(this.arrActivePlayers);
 
             //utworzenie sekcji ogólnej
             const modalActivePlayers = document.createElement('section');
@@ -44,6 +42,14 @@ export class RenderModalActivePlayers  {
             //wywołanie funkcji zamykającej oczekującej na click
             this.closeModal() 
 
+            //utworzenie licznika aktywnych graczy
+            const playersCounter = document.createElement('div');
+            playersCounter.textContent=this.arrActivePlayers.length;
+            playersCounter.classList.add('modal-allPlayers-playerCounter');
+            modalActivePlayers.appendChild(playersCounter);
+            this.playersCounter=playersCounter
+
+
             //utworzenie kontenera
             const modalActivePlayersCnt = document.createElement('div');
             modalActivePlayersCnt.classList.add('modal-activePlayers-cnt');
@@ -55,13 +61,6 @@ export class RenderModalActivePlayers  {
             modalActivePlayersCntTitle.classList.add('modal-activePlayers-cnt-title');
             modalActivePlayersCnt.appendChild(modalActivePlayersCntTitle);
 
-            //utworzenie pola wyszukiwania
-            // const modalActivePlayersCntInput = document.createElement('input');
-            // modalActivePlayersCntInput.classList.add('modal-allPlayers-cnt-input');
-            // modalActivePlayersCntInput.placeholder = 'find_Player';
-            // modalActivePlayersCntInput.type = 'search';
-            // modalActivePlayersCnt.appendChild(modalActivePlayersCntInput);
-            // this.input = modalActivePlayersCntInput;
 
             //utworzenie kontenera na liste zawodników
             const modalActivePlayersCntList = document.createElement('div');
@@ -75,6 +74,7 @@ export class RenderModalActivePlayers  {
             modalActivePlayersCntListTitle.textContent='Click minus icon to remove the player';
             modalActivePlayersCntList.appendChild(modalActivePlayersCntListTitle);
 
+
             //wywołanie funkcji dodającyj aktywnych graczy do modala
             this.addActivePlayersToModal()
 
@@ -83,6 +83,7 @@ export class RenderModalActivePlayers  {
 
             //utworzenie klasy Draw
              return new Draw(this.arrActivePlayers);
+             
         })
     }
     closeModal(){
@@ -131,20 +132,26 @@ export class RenderModalActivePlayers  {
                 const iconCnt = icon.parentElement;
                 const positionElement = iconCnt.previousElementSibling;
                 const nameElement = positionElement.previousElementSibling.textContent;
-
+                
                 this.arrActivePlayers.forEach(el=>{
                     if(el.name === nameElement){
                         const index = this.arrActivePlayers.indexOf(el);
                         this.arrActivePlayers.splice(index, 1);
-                        // console.log(el.name);
+                        this.countPlayers();
                     }
                 })
                 el.closest('.modal-activePlayers-cnt-list-player').remove();
                 return new Draw(this.arrActivePlayers);
 
             })
+            
         })
         
+    }
+
+    countPlayers(){
+        const value = this.arrActivePlayers.length
+        this.playersCounter.textContent = value;
     }
 
 }

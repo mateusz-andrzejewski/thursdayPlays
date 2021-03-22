@@ -7,6 +7,7 @@ export class Draw{
         this.drawBtn = document.querySelector('.draw');
         this.comparedArr = null;
         this.arrTeams=null;
+        this.teamsSkillRates = [];
 
         this.showResults()
     }
@@ -61,6 +62,16 @@ export class Draw{
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
         console.log(this.arrTeams);
+
+        //obliczenie avg drużyn
+        let itAvg = 0;
+        for(const team of this.arrTeams){
+            this.teamSkillRating(this.arrTeams, itAvg);
+            itAvg++
+        }
+        //sprawdzenie średnich odchyleń w średnich
+        this.teamSkillDif(this.teamsSkillRates)
+
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -86,42 +97,80 @@ export class Draw{
         }    
     }
     deletePlayerFromArr(arr, index){
-        return arr.splice(index,1)
+        return arr.splice(index, 1)
     }
     maxPosInSquad(posArr, numberOfTeams){
         return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
     }
     crossing(numberOfTeams, posA, posD, posG){
         let iterator = 0;
+        let teamIndexs = [];
+        for(let i=0; i<numberOfTeams; i++){
+            const index = i;
+            teamIndexs.push(index)
+        }
         while(posA.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posA[0])
-                posA.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posA[0])
+                posA.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
         while(posD.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posD[0])
-                posD.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posD[0])
+                posD.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
         while(posG.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posG[0])
-                posG.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posG[0])
+                posG.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
 
-        
+    }
+    teamSkillRating(arrTeams, whichTeam){
+        const sRofTeam = [];
+        arrTeams[whichTeam][1].forEach(el=>sRofTeam.push(el.skillRate));
+        const avg =((sRofTeam.reduce((prev, next)=> prev * 1 + next * 1) / (arrTeams[whichTeam][1].length * 4))*100).toFixed(1);
+        this.teamsSkillRates.push(Number(avg));
+        console.log(avg);
+        return avg
+    }
+    teamSkillDif(teamSkillArr){
+        const max = Math.max(...teamSkillArr);
+        const min = Math.min(...teamSkillArr);
+        const maxIndex = teamSkillArr.indexOf(max);
+        const minIndex = teamSkillArr.indexOf(min);
+        console.log(max, min);
+        console.log(maxIndex, minIndex);
     }
 }
 

@@ -315,12 +315,12 @@ footer {
   top: -1rem;
   left: -1rem;
   border-radius: 50%;
-  background: linear-gradient(to bottom, rgb(75, 116, 19), black);
+  background: linear-gradient(to bottom, black, var(--backgroundOne));
   color: white;
   width: 50px;
   height: 50px;
   font-size: 1.8rem;
-  box-shadow: 0 0 7px 0 rgba(255, 255, 255, 0.575);
+  box-shadow: 0 0 20px 0 greenyellow;
 }
 .modal-allPlayers-cnt,
 .modal-activePlayers-cnt {
@@ -404,8 +404,8 @@ footer {
 }
 .modal-allPlayers-cnt-confirm {
   position: absolute;
-  bottom: 0;
-  top: 92%;
+  bottom: 2%;
+  top: 90%;
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
