@@ -152,7 +152,6 @@ export class RenderModalActivePlayers  {
     countPlayers(){
         const value = this.arrActivePlayers.length
         this.playersCounter.textContent = value;
-        console.log('i should change counter');
     }
 
 }

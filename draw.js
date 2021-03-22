@@ -86,42 +86,64 @@ export class Draw{
         }    
     }
     deletePlayerFromArr(arr, index){
-        return arr.splice(index,1)
+        return arr.splice(index, 1)
     }
     maxPosInSquad(posArr, numberOfTeams){
         return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
     }
     crossing(numberOfTeams, posA, posD, posG){
         let iterator = 0;
+        let teamIndexs = [];
+        for(let i=0; i<numberOfTeams; i++){
+            const index = i;
+            teamIndexs.push(index)
+        }
         while(posA.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posA[0])
-                posA.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posA[0])
+                posA.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
         while(posD.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posD[0])
-                posD.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posD[0])
+                posD.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
         while(posG.length){
             if(numberOfTeams>iterator){
-                this.arrTeams[iterator][1].push(posG[0])
-                posG.shift()
+                const random = this.randomizer(teamIndexs.length-1);
+                this.arrTeams[teamIndexs[random]][1].push(posG[0])
+                posG.shift();
+                this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
             }else{
                 iterator=0;
+                for(let i=0; i<numberOfTeams; i++){
+                    const index = i;
+                    teamIndexs.push(index)
+                }
             }
         }
 
-        
     }
 }
 
