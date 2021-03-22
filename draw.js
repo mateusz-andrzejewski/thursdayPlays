@@ -61,6 +61,8 @@ export class Draw{
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
         console.log(this.arrTeams);
+        this.teamSkillRating(this.arrTeams, 0);
+        this.teamSkillRating(this.arrTeams, 1);
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -144,6 +146,12 @@ export class Draw{
             }
         }
 
+    }
+    teamSkillRating(arrTeams, whichTeam){
+        const sRofTeam = [];
+        arrTeams[whichTeam][1].forEach(el=>sRofTeam.push(el.skillRate));
+        const avg =((sRofTeam.reduce((prev, next)=> prev * 1 + next * 1) / (arrTeams[whichTeam][1].length * 4))*100).toFixed(1);
+        return avg
     }
 }
 
