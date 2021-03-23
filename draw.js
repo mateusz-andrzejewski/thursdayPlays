@@ -221,28 +221,18 @@ export class Draw{
         }
     }
     changePlayers(indexs, players, arrTeams){
-        // console.log(indexs);
-        // console.log(players);
         const bestTeam = arrTeams[indexs[0]][1];
         const worstTeam = arrTeams[indexs[1]][1];
-        console.log(bestTeam);
-        console.log(worstTeam);
+        
         const worstPlayerWorstTeam = arrTeams[indexs[1]][1][players[0]];
         const betterPlayerBestTeam = arrTeams[indexs[0]][1][players[1]];
-        console.log(worstPlayerWorstTeam);
-        console.log(betterPlayerBestTeam);
-        // //dodanie słabego playera do mocnej drużyny
-        // arrTeams[indexs[0]][1].push(arrTeams[1][players[0]]);
-        // dodanie mocnego playera do słabej drużyny
-        // arrTeams[indexs[1]][1].push(arrTeams[1][players[1]]);
-        
-        // //usunięcie słabego plejera w słabej druzynie i lepszego w mocnej
+
+        const indexOfWorstPlayer = worstTeam.indexOf(worstPlayerWorstTeam);
+        console.log(`najgorszy gracz ma index: ${indexOfWorstPlayer}`);
+        const indexOfBetterPlayer = bestTeam.indexOf(betterPlayerBestTeam);
+        console.log(`lepszy gracz ma index: ${indexOfBetterPlayer}`);
 
 
-
-        // console.log(arrTeams);
-
-        
     }
 }
 
