@@ -8,6 +8,8 @@ export class Draw{
         this.comparedArr = null;
         this.arrTeams=null;
         this.teamsSkillRates = [];
+        this.playersToChange = [];
+        this.addresesForPlayerToChange=[]
 
         this.showResults()
     }
@@ -73,8 +75,10 @@ export class Draw{
         if(this.teamSkillDif(this.teamsSkillRates)<5){
             return console.log(`koniec ;D`);
         }else{
-            this.balancingFirst(this.teamsSkillRates, this.arrTeams)
+            this.detectWhoChange(this.teamsSkillRates, this.arrTeams)
         }
+        //wykonanie zmiany najgorszego zawodnika z najgorszej druzyny z zawodnikiem o 1 SR lepszym z druzyny najlepszej
+        this.changePlayers(this.addresesForPlayerToChange, this.playersToChange, this.arrTeams)
         
 
     }
@@ -166,7 +170,6 @@ export class Draw{
         arrTeams[whichTeam][1].forEach(el=>sRofTeam.push(el.skillRate));
         const avg =((sRofTeam.reduce((prev, next)=> prev * 1 + next * 1) / (arrTeams[whichTeam][1].length * 4))*100).toFixed(1);
         this.teamsSkillRates.push(Number(avg));
-        console.log(avg);
         return avg
     }
     teamSkillDif(teamSkillArr){
@@ -175,14 +178,15 @@ export class Draw{
         const maxIndex = teamSkillArr.indexOf(max);
         const minIndex = teamSkillArr.indexOf(min);
         console.log(max, min);
-        console.log(maxIndex, minIndex);
         return max-min;
     }
-    balancingFirst(teamSkillArr, arrTeams){
+    detectWhoChange(teamSkillArr, arrTeams){
         const max = Math.max(...teamSkillArr);
         const min = Math.min(...teamSkillArr);
         const maxIndex = teamSkillArr.indexOf(max);
         const minIndex = teamSkillArr.indexOf(min);
+        this.addresesForPlayerToChange.push(maxIndex)
+        this.addresesForPlayerToChange.push(minIndex)
 
         const bestTeam = arrTeams[maxIndex][1];
         const worstTeam = arrTeams[minIndex][1];
@@ -191,8 +195,50 @@ export class Draw{
                                               .sort((a,b)=>{return a-b})[0];
         const indexOfminSrInWorstTeam = worstTeam.indexOf(worstTeam.find(el=>el.skillRate===minSrInWorstTeam));
         const worstPlayer = worstTeam[indexOfminSrInWorstTeam]; //jako obiekt
-        console.log(minSrInWorstTeam, worstPlayer);
-        //znalezienie gościa o jeden lepszego niż  najgorszy
+        this.playersToChange.push(indexOfminSrInWorstTeam)//tutaj zmieniłem z worstPlayer ! !
+
+        //znalezienie gościa w najlepszej drużynie o jeden lepszego niż najgorszy w najgorszej drużynie;
+        // console.log(Number(minSrInWorstTeam)+1);
+        const bestTeamSrs = bestTeam.map(el=>el.skillRate*1);
+        console.log(bestTeamSrs);
+        if(bestTeamSrs.includes(Number(minSrInWorstTeam)+1)){
+            const index = bestTeamSrs.find(el=>el === Number(minSrInWorstTeam)+1);
+            const indexPlus = bestTeamSrs.indexOf(index);
+        //    return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
+           return this.playersToChange.push(indexPlus);
+        }else if(bestTeamSrs.includes(Number(minSrInWorstTeam)+2)){
+            const index = bestTeamSrs.find(el=>el=== Number(minSrInWorstTeam)+2);
+            const indexPlus = bestTeamSrs.indexOf(index);
+            // return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
+            return this.playersToChange.push(indexPlus);
+
+        }else if (bestTeamSrs.includes(Number(minSrInWorstTeam)+3)){
+            const index = bestTeamSrs.find(el=>el=== Number(minSrInWorstTeam)+3);
+            const indexPlus = bestTeamSrs.indexOf(index);
+            // return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
+            return this.playersToChange.push(indexPlus);
+
+        }
+    }
+    changePlayers(indexs, players, arrTeams){
+        console.log(indexs);
+        console.log(players);
+        const worstPlayerWorstTeam = arrTeams[indexs[1]][1][players[0]];
+        const betterPlayerBestTeam = arrTeams[indexs[0]][1][players[1]];
+        console.log(worstPlayerWorstTeam);
+        console.log(betterPlayerBestTeam);
+        // //dodanie słabego playera do mocnej drużyny
+        // arrTeams[indexs[0]][1].push(arrTeams[1][players[0]]);
+        // dodanie mocnego playera do słabej drużyny
+        // arrTeams[indexs[1]][1].push(arrTeams[1][players[1]]);
+        
+        // //usunięcie słabego plejera w słabej druzynie i lepszego w mocnej
+
+
+
+        // console.log(arrTeams);
+
+        
     }
 }
 
