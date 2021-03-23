@@ -23,8 +23,10 @@ export class Draw{
             if (this.teamNumber<2) return window.alert(`There is no sense of draw 🤔 Please put 2 teams at least, and remember that I accept only integers, can you imagine half of team?😜`);
             //wywołanie funkcji korelacyjnej wielkie tablice
             this.compare(this.arrActivePlayers, this.arrAllPlayers);
-            //wywołanie funkcji drawingAlgorithm
-            this.drawingAlgorithm(this.comparedArr, this.teamNumber)
+            //wywołanie funkcji drawingAlgorithm 
+                this.drawingAlgorithm(this.comparedArr, this.teamNumber);
+            
+            console.log(this.arrTeams);
             
         })       
     }
@@ -61,6 +63,8 @@ export class Draw{
         const maxGInSquad = this.maxPosInSquad(posG,teams);
         const maxDInSquad = this.maxPosInSquad(posD,teams);
         const maxAInSquad = this.maxPosInSquad(posA,teams);
+
+
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
 
@@ -72,7 +76,6 @@ export class Draw{
         }
         //sprawdzenie średnich odchyleń w średnich
         if(this.teamSkillDif(this.teamsSkillRates)<5){
-
             return console.log(this.arrTeams);
         }else{
             this.detectWhoChange(this.teamsSkillRates, this.arrTeams)
@@ -80,7 +83,8 @@ export class Draw{
         //wykonanie zmiany najgorszego zawodnika z najgorszej druzyny z zawodnikiem o 1 SR lepszym z druzyny najlepszej
         this.changePlayers(this.addresesForPlayerToChange, this.playersToChange, this.arrTeams)
 
-        console.log(this.arrTeams);
+        return this.arrTeams
+        
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
