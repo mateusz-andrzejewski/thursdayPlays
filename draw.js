@@ -63,7 +63,6 @@ export class Draw{
         const maxAInSquad = this.maxPosInSquad(posA,teams);
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
-        console.log(this.arrTeams);
 
         //obliczenie avg drużyn
         let itAvg = 0;
@@ -73,14 +72,15 @@ export class Draw{
         }
         //sprawdzenie średnich odchyleń w średnich
         if(this.teamSkillDif(this.teamsSkillRates)<5){
-            return console.log(`koniec ;D`);
+
+            return console.log(this.arrTeams);
         }else{
             this.detectWhoChange(this.teamsSkillRates, this.arrTeams)
         }
         //wykonanie zmiany najgorszego zawodnika z najgorszej druzyny z zawodnikiem o 1 SR lepszym z druzyny najlepszej
         this.changePlayers(this.addresesForPlayerToChange, this.playersToChange, this.arrTeams)
-        
 
+        console.log(this.arrTeams);
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
@@ -200,7 +200,6 @@ export class Draw{
         //znalezienie gościa w najlepszej drużynie o jeden lepszego niż najgorszy w najgorszej drużynie;
         // console.log(Number(minSrInWorstTeam)+1);
         const bestTeamSrs = bestTeam.map(el=>el.skillRate*1);
-        console.log(bestTeamSrs);
         if(bestTeamSrs.includes(Number(minSrInWorstTeam)+1)){
             const index = bestTeamSrs.find(el=>el === Number(minSrInWorstTeam)+1);
             const indexPlus = bestTeamSrs.indexOf(index);
@@ -223,16 +222,20 @@ export class Draw{
     changePlayers(indexs, players, arrTeams){
         const bestTeam = arrTeams[indexs[0]][1];
         const worstTeam = arrTeams[indexs[1]][1];
-        
+
         const worstPlayerWorstTeam = arrTeams[indexs[1]][1][players[0]];
         const betterPlayerBestTeam = arrTeams[indexs[0]][1][players[1]];
 
         const indexOfWorstPlayer = worstTeam.indexOf(worstPlayerWorstTeam);
-        console.log(`najgorszy gracz ma index: ${indexOfWorstPlayer}`);
         const indexOfBetterPlayer = bestTeam.indexOf(betterPlayerBestTeam);
-        console.log(`lepszy gracz ma index: ${indexOfBetterPlayer}`);
 
+        bestTeam.splice(indexOfBetterPlayer, 1);
+        worstTeam.splice(indexOfWorstPlayer, 1);
 
+        bestTeam.push(betterPlayerBestTeam);
+        worstTeam.push(worstPlayerWorstTeam);
+
+        return this.arrTeams = arrTeams
     }
 }
 
