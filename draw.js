@@ -221,8 +221,12 @@ export class Draw{
         }
     }
     changePlayers(indexs, players, arrTeams){
-        console.log(indexs);
-        console.log(players);
+        // console.log(indexs);
+        // console.log(players);
+        const bestTeam = arrTeams[indexs[0]][1];
+        const worstTeam = arrTeams[indexs[1]][1];
+        console.log(bestTeam);
+        console.log(worstTeam);
         const worstPlayerWorstTeam = arrTeams[indexs[1]][1][players[0]];
         const betterPlayerBestTeam = arrTeams[indexs[0]][1][players[1]];
         console.log(worstPlayerWorstTeam);
