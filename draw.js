@@ -70,7 +70,12 @@ export class Draw{
             itAvg++
         }
         //sprawdzenie średnich odchyleń w średnich
-        this.teamSkillDif(this.teamsSkillRates)
+        if(this.teamSkillDif(this.teamsSkillRates)<5){
+            return console.log(`koniec ;D`);
+        }else{
+            this.balancingFirst(this.teamsSkillRates, this.arrTeams)
+        }
+        
 
     }
     teamCreator(numberOfTeams){
@@ -171,6 +176,23 @@ export class Draw{
         const minIndex = teamSkillArr.indexOf(min);
         console.log(max, min);
         console.log(maxIndex, minIndex);
+        return max-min;
+    }
+    balancingFirst(teamSkillArr, arrTeams){
+        const max = Math.max(...teamSkillArr);
+        const min = Math.min(...teamSkillArr);
+        const maxIndex = teamSkillArr.indexOf(max);
+        const minIndex = teamSkillArr.indexOf(min);
+
+        const bestTeam = arrTeams[maxIndex][1];
+        const worstTeam = arrTeams[minIndex][1];
+
+        const minSrInWorstTeam = worstTeam.map(el=>el.skillRate)
+                                              .sort((a,b)=>{return a-b})[0];
+        const indexOfminSrInWorstTeam = worstTeam.indexOf(worstTeam.find(el=>el.skillRate===minSrInWorstTeam));
+        const worstPlayer = worstTeam[indexOfminSrInWorstTeam]; //jako obiekt
+        console.log(minSrInWorstTeam, worstPlayer);
+        //znalezienie gościa o jeden lepszego niż  najgorszy
     }
 }
 

@@ -36,7 +36,7 @@
             {
                 name: 'Carmine de Lucia',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'Michał Jabłoński',
@@ -56,17 +56,17 @@
             {
                 name: 'Szymon Kaczyński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'Paweł Karczewski',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'Radosław Kosiński',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'Adam Kowalski',
@@ -76,7 +76,7 @@
             {
                 name: 'Radosław Kowynia',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'Arkadiusz Krawczyk',
@@ -111,7 +111,7 @@
             {
                 name: 'Marcin Markowski',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'Tomasz Nowok',
@@ -126,7 +126,7 @@
             {
                 name: 'Dawid Ptak',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'Bartek Sadło',
