@@ -6,12 +6,12 @@
             {
                 name: 'Mateusz Andrzejewski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'Łukasz Błaszczuk',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'Przemysław Celadyn',
@@ -26,12 +26,12 @@
             {
                 name: 'Dawid Dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'Łukasz Dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'Carmine de Lucia',
@@ -41,7 +41,7 @@
             {
                 name: 'Michał Jabłoński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'Mateusz Jeż',
@@ -51,17 +51,17 @@
             {
                 name: 'Grzegorz Jóźwik',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'Szymon Kaczyński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'Paweł Karczewski',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'Radosław Kosiński',
@@ -71,12 +71,12 @@
             {
                 name: 'Adam Kowalski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'Radosław Kowynia',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'Arkadiusz Krawczyk',
@@ -86,7 +86,7 @@
             {
                 name: 'Karol Krzyżankiewicz',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'Piotr Kuźniewicz',
@@ -106,7 +106,7 @@
             {
                 name: 'Mateusz Malik',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'Marcin Markowski',
@@ -141,12 +141,12 @@
             {
                 name: 'Wojciech Trojanowski',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'Jakub Umywalnik',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'Kamil Wawoczny',

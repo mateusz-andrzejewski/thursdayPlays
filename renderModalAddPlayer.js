@@ -106,7 +106,7 @@ export class RenderModalAddPlayer{
             //utworzenie spana dla skillStack
             const modalAddPlayerCntSkillStackString = document.createElement('span');
             modalAddPlayerCntSkillStackString.classList.add('modal-addPlayer-cnt-skillStack-string');
-            modalAddPlayerCntSkillStackString.textContent='skill_Rate (1-low, 4-top)';
+            modalAddPlayerCntSkillStackString.textContent='skill_Rate (1-low, 5-top)';
             modalAddPlayerCntSkillStack.appendChild(modalAddPlayerCntSkillStackString);
             //utworzenie selecta
             const modalAddPlayerCntPositionStackSkillOptions = document.createElement('select');
@@ -116,10 +116,10 @@ export class RenderModalAddPlayer{
             modalAddPlayerCntSkillStack.appendChild(modalAddPlayerCntPositionStackSkillOptions);
             
             //utworzenie opcji dla selecta
-            for(let i=1;i<5;i++){
+            for(let i=1;i<6;i++){
                 const option = document.createElement('option');
                 option.value=i;
-                if(i===2) option.selected='true';
+                if(i===3) option.selected='true';
                 option.textContent=`${i}`;
                 modalAddPlayerCntPositionStackSkillOptions.appendChild(option)
             }
