@@ -8,8 +8,8 @@ export class Draw{
         this.comparedArr = null;
         this.arrTeams=null;
         this.teamsSkillRates = [];
-        this.playersToChange = [];
-        this.addresesForPlayerToChange=[]
+        this.differenceMaxMin=null;
+
 
         this.showResults()
     }
@@ -20,13 +20,30 @@ export class Draw{
             //zabezpieczenie przed pustym inputem
             if(this.teamNumber==="")return window.alert('Give me information about number of teams 😎');
             //zabezpieczeniem przed zbyt małym inputem
-            if (this.teamNumber<2) return window.alert(`There is no sense of draw 🤔 Please put 2 teams at least, and remember that I accept only integers, can you imagine half of team?😜`);
-            //wywołanie funkcji korelacyjnej wielkie tablice
+            if (this.teamNumber<2) return window.alert(`There is no sense of draw 🤔 Please put 2 teams at least, and remember that I accept only integers 😜`);
+            //wywołanie funkcji  łączącej wielkie tablice
             this.compare(this.arrActivePlayers, this.arrAllPlayers);
-            //wywołanie funkcji drawingAlgorithm 
-                this.drawingAlgorithm(this.comparedArr, this.teamNumber);
+
+            let procentBuffBetweenTeam = 0
+            if(this.teamNumber<=2){
+                 procentBuffBetweenTeam = 5;
+            }else{
+                 procentBuffBetweenTeam = 8;
+            }
             
-            console.log(this.arrTeams);
+            for(let i = 0; i<5000; i++){
+                console.log(`iteracja nr: ${i+1}`);
+                this.drawingAlgorithm(this.comparedArr, this.teamNumber)
+                console.log(this.teamsSkillRates, this.arrTeams);
+                this.teamSkillDif(this.teamsSkillRates);
+                if(this.differenceMaxMin<=procentBuffBetweenTeam){
+                    break
+                }
+                this.teamsSkillRates.length=0;
+            }
+            //  zwrócenie dalej treści do do rednerTeams.js
+            return console.log(`ostateczna wersja to:`, this.arrTeams)
+            ;
             
         })       
     }
@@ -45,10 +62,6 @@ export class Draw{
         return this.comparedArr = comparedArr;
     }
     drawingAlgorithm(arr, teams){
-        //ustalenie czy będzie zawodnik dodatkowy 1=tak || 0=nie.
-        const additionalPlayer = arr.length/teams%2>0 ? 1 : 0;
-        //ustalenie ilości zawodników w drużynie na podstawie liczby drużyn i ilości aktywnych zaw.
-        const playersInTeam = Math.floor(arr.length/teams);
         //podzielenie graczy na poszczególne tablice
         const posG = arr.filter(el=>el.position==='G');
         const posD = arr.filter(el=>el.position==='D');
@@ -56,64 +69,41 @@ export class Draw{
 
         //główna tablica  do przechowująca drużyny
         const arrTeams=[];
-        this.arrTeams = arrTeams;
-        //utworzenie drużyn dla Tablicy arrTeams
-        this.teamCreator(teams); //zwraca do arrTeams odp ilość podtablic w formacie [team1, [squad...]]
-        //ustalenie ile max 'G', 'D', 'A' może być w squadzie
-        const maxGInSquad = this.maxPosInSquad(posG,teams);
-        const maxDInSquad = this.maxPosInSquad(posD,teams);
-        const maxAInSquad = this.maxPosInSquad(posA,teams);
+        this.arrTeams=arrTeams;
 
+        //utworzenie drużyn dla Tablicy arrTeams
+        this.teamCreator(teams); //zwraca do arrTeams odp ilość podtablic w formacie [team1]
 
         // rozdzielenie (crossing) zawodników do osobnych drużyn
         this.crossing(teams, posA, posD, posG);
 
-        //obliczenie avg drużyn
+        // obliczenie avg drużyn
         let itAvg = 0;
         for(const team of this.arrTeams){
-            this.teamSkillRating(this.arrTeams, itAvg);
+            this.teamsSkillRates.push(this.teamSkillRating(this.arrTeams, itAvg));
             itAvg++
         }
-        //sprawdzenie średnich odchyleń w średnich
-        if(this.teamSkillDif(this.teamsSkillRates)<5){
-            return console.log(this.arrTeams);
-        }else{
-            this.detectWhoChange(this.teamsSkillRates, this.arrTeams)
-        }
-        //wykonanie zmiany najgorszego zawodnika z najgorszej druzyny z zawodnikiem o 1 SR lepszym z druzyny najlepszej
-        this.changePlayers(this.addresesForPlayerToChange, this.playersToChange, this.arrTeams)
-
-        return this.arrTeams
+        // //sprawdzenie średnich odchyleń w średnich
+        // if(this.teamSkillDif(this.teamsSkillRates)<10){
+        //     return this.arrTeams;
+        // }else{
+        //     console.log("solve isn't finded yet", this.teamsSkillRates, this.arrTeams);
+        //     this.teamsSkillRates.length=0;
+        //     return false
+        // }
         
     }
     teamCreator(numberOfTeams){
         for(let i=0; i<numberOfTeams;i++){
-            const team = [];
-            const name = `Team ${i+1}`;
             const squad = [];
-            team.push(name);
-            team.push(squad);
-            this.arrTeams.push(team)
+            this.arrTeams.push(squad)
         }
     }
     randomizer(max){
         return Math.floor(Math.random()*(max-0+1))+0;
     }
-    checkHowManyPosAlreadyInTeam(arr, position, maxPosInSquad){
-        for(const el of arr){
-            const countPlayersAtThePosition = el[1].filter(item=>item.position=== position).length
-            if(countPlayersAtThePosition>maxPosInSquad){
-                return 'nok';
-            }else{
-                return 'ok';
-            }
-        }    
-    }
     deletePlayerFromArr(arr, index){
         return arr.splice(index, 1)
-    }
-    maxPosInSquad(posArr, numberOfTeams){
-        return Number.isInteger(posArr.length/numberOfTeams) ? posArr.length/numberOfTeams : Math.floor(posArr.length/numberOfTeams)+1;
     }
     crossing(numberOfTeams, posA, posD, posG){
         let iterator = 0;
@@ -125,7 +115,7 @@ export class Draw{
         while(posA.length){
             if(numberOfTeams>iterator){
                 const random = this.randomizer(teamIndexs.length-1);
-                this.arrTeams[teamIndexs[random]][1].push(posA[0])
+                this.arrTeams[teamIndexs[random]].push(posA[0])
                 posA.shift();
                 this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
@@ -140,7 +130,7 @@ export class Draw{
         while(posD.length){
             if(numberOfTeams>iterator){
                 const random = this.randomizer(teamIndexs.length-1);
-                this.arrTeams[teamIndexs[random]][1].push(posD[0])
+                this.arrTeams[teamIndexs[random]].push(posD[0])
                 posD.shift();
                 this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
@@ -155,7 +145,7 @@ export class Draw{
         while(posG.length){
             if(numberOfTeams>iterator){
                 const random = this.randomizer(teamIndexs.length-1);
-                this.arrTeams[teamIndexs[random]][1].push(posG[0])
+                this.arrTeams[teamIndexs[random]].push(posG[0])
                 posG.shift();
                 this.deletePlayerFromArr(teamIndexs, random);
                 iterator++
@@ -171,9 +161,8 @@ export class Draw{
     }
     teamSkillRating(arrTeams, whichTeam){
         const sRofTeam = [];
-        arrTeams[whichTeam][1].forEach(el=>sRofTeam.push(el.skillRate));
-        const avg =((sRofTeam.reduce((prev, next)=> prev * 1 + next * 1) / (arrTeams[whichTeam][1].length * 4))*100).toFixed(1);
-        this.teamsSkillRates.push(Number(avg));
+        arrTeams[whichTeam].forEach(el=>sRofTeam.push(el.skillRate));
+        const avg =((sRofTeam.reduce((prev, next)=> (+prev) + (+next)) / (arrTeams[whichTeam].length * 5))*100).toFixed(1);
         return avg
     }
     teamSkillDif(teamSkillArr){
@@ -181,65 +170,7 @@ export class Draw{
         const min = Math.min(...teamSkillArr);
         const maxIndex = teamSkillArr.indexOf(max);
         const minIndex = teamSkillArr.indexOf(min);
-        console.log(max, min);
-        return max-min;
-    }
-    detectWhoChange(teamSkillArr, arrTeams){
-        const max = Math.max(...teamSkillArr);
-        const min = Math.min(...teamSkillArr);
-        const maxIndex = teamSkillArr.indexOf(max);
-        const minIndex = teamSkillArr.indexOf(min);
-        this.addresesForPlayerToChange.push(maxIndex)
-        this.addresesForPlayerToChange.push(minIndex)
-
-        const bestTeam = arrTeams[maxIndex][1];
-        const worstTeam = arrTeams[minIndex][1];
-
-        const minSrInWorstTeam = worstTeam.map(el=>el.skillRate)
-                                              .sort((a,b)=>{return a-b})[0];
-        const indexOfminSrInWorstTeam = worstTeam.indexOf(worstTeam.find(el=>el.skillRate===minSrInWorstTeam));
-        const worstPlayer = worstTeam[indexOfminSrInWorstTeam]; //jako obiekt
-        this.playersToChange.push(indexOfminSrInWorstTeam)//tutaj zmieniłem z worstPlayer ! !
-
-        //znalezienie gościa w najlepszej drużynie o jeden lepszego niż najgorszy w najgorszej drużynie;
-        // console.log(Number(minSrInWorstTeam)+1);
-        const bestTeamSrs = bestTeam.map(el=>el.skillRate*1);
-        if(bestTeamSrs.includes(Number(minSrInWorstTeam)+1)){
-            const index = bestTeamSrs.find(el=>el === Number(minSrInWorstTeam)+1);
-            const indexPlus = bestTeamSrs.indexOf(index);
-        //    return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
-           return this.playersToChange.push(indexPlus);
-        }else if(bestTeamSrs.includes(Number(minSrInWorstTeam)+2)){
-            const index = bestTeamSrs.find(el=>el=== Number(minSrInWorstTeam)+2);
-            const indexPlus = bestTeamSrs.indexOf(index);
-            // return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
-            return this.playersToChange.push(indexPlus);
-
-        }else if (bestTeamSrs.includes(Number(minSrInWorstTeam)+3)){
-            const index = bestTeamSrs.find(el=>el=== Number(minSrInWorstTeam)+3);
-            const indexPlus = bestTeamSrs.indexOf(index);
-            // return this.playersToChange.push(bestTeam.find(el=>el.skillRate===index.toString()));
-            return this.playersToChange.push(indexPlus);
-
-        }
-    }
-    changePlayers(indexs, players, arrTeams){
-        const bestTeam = arrTeams[indexs[0]][1];
-        const worstTeam = arrTeams[indexs[1]][1];
-
-        const worstPlayerWorstTeam = arrTeams[indexs[1]][1][players[0]];
-        const betterPlayerBestTeam = arrTeams[indexs[0]][1][players[1]];
-
-        const indexOfWorstPlayer = worstTeam.indexOf(worstPlayerWorstTeam);
-        const indexOfBetterPlayer = bestTeam.indexOf(betterPlayerBestTeam);
-
-        bestTeam.splice(indexOfBetterPlayer, 1);
-        worstTeam.splice(indexOfWorstPlayer, 1);
-
-        bestTeam.push(betterPlayerBestTeam);
-        worstTeam.push(worstPlayerWorstTeam);
-
-        return this.arrTeams = arrTeams
+        return this.differenceMaxMin = max-min;
     }
 }
 
