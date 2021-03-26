@@ -1,4 +1,5 @@
 import {Players} from './players.js'
+import {RenderTeams} from './renderTeams.js'
 export class Draw{
     constructor(arrActivePlayers){
         this.arrActivePlayers = arrActivePlayers;
@@ -24,17 +25,28 @@ export class Draw{
             //wywołanie funkcji  łączącej wielkie tablice
             this.compare(this.arrActivePlayers, this.arrAllPlayers);
 
-            let procentBuffBetweenTeam = 0
-            if(this.teamNumber<=2){
-                 procentBuffBetweenTeam = 5;
+            // let procentBuffBetweenTeam = 0;
+
+            //wersja v1 zalezna od liczby druzyn
+
+            // if(this.teamNumber<=2){
+            //      procentBuffBetweenTeam = 5;
+            // }else{
+            //      procentBuffBetweenTeam = 8;
+            // 
+
+            //wersja v2 zalezna od liczby zawodników aktywnych
+            let procentBuffBetweenTeam = 0;
+
+            if(this.arrActivePlayers.length<10){
+                 procentBuffBetweenTeam = 10;
             }else{
-                 procentBuffBetweenTeam = 8;
+                 procentBuffBetweenTeam = 3;
             }
             
             for(let i = 0; i<5000; i++){
-                console.log(`iteracja nr: ${i+1}`);
+                // console.log(`iteracja nr: ${i+1}`);
                 this.drawingAlgorithm(this.comparedArr, this.teamNumber)
-                console.log(this.teamsSkillRates, this.arrTeams);
                 this.teamSkillDif(this.teamsSkillRates);
                 if(this.differenceMaxMin<=procentBuffBetweenTeam){
                     break
@@ -42,8 +54,8 @@ export class Draw{
                 this.teamsSkillRates.length=0;
             }
             //  zwrócenie dalej treści do do rednerTeams.js
-            return console.log(`ostateczna wersja to:`, this.arrTeams)
-            ;
+            console.log(this.arrTeams);
+            return new RenderTeams(this.arrTeams);
             
         })       
     }
