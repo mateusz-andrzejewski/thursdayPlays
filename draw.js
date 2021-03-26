@@ -45,9 +45,8 @@ export class Draw{
             }
             
             for(let i = 0; i<5000; i++){
-                console.log(`iteracja nr: ${i+1}`);
+                // console.log(`iteracja nr: ${i+1}`);
                 this.drawingAlgorithm(this.comparedArr, this.teamNumber)
-                console.log(this.teamsSkillRates, this.arrTeams);
                 this.teamSkillDif(this.teamsSkillRates);
                 if(this.differenceMaxMin<=procentBuffBetweenTeam){
                     break
@@ -55,6 +54,7 @@ export class Draw{
                 this.teamsSkillRates.length=0;
             }
             //  zwrócenie dalej treści do do rednerTeams.js
+            console.log(this.arrTeams);
             return new RenderTeams(this.arrTeams);
             
         })       
