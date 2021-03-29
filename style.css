@@ -167,18 +167,23 @@ body {
 /* fourth part - Results */
 .results {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 58%;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   width: 95%;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 5px;
   box-shadow: 0 0 7px 0px white;
+}
+.resluts-box {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
 }
 .results-messageBefore {
   display: block;
@@ -192,6 +197,11 @@ body {
   padding: 5px;
 }
 .results-teamName {
+  position: absolute;
+  left: 50%;
+  top: 1.5%;
+  transform: translateX(-50%);
+  text-align: center;
   margin: 10px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -233,6 +243,11 @@ body {
   transform: rotate(180deg);
 }
 .results-playersCnt {
+  position: absolute;
+  top: 25%;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 65%;
   border-radius: 5px;
   padding: 0.2rem;

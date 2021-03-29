@@ -25,15 +25,15 @@ export class Draw{
             //wywołanie funkcji  łączącej wielkie tablice
             this.compare(this.arrActivePlayers, this.arrAllPlayers);
 
-            // let procentBuffBetweenTeam = 0;
+            
 
             //wersja v1 zalezna od liczby druzyn
-
+            // let procentBuffBetweenTeam = 0;
             // if(this.teamNumber<=2){
             //      procentBuffBetweenTeam = 5;
             // }else{
             //      procentBuffBetweenTeam = 8;
-            // 
+            // }
 
             //wersja v2 zalezna od liczby zawodników aktywnych
             let procentBuffBetweenTeam = 0;
@@ -41,7 +41,7 @@ export class Draw{
             if(this.arrActivePlayers.length<10){
                  procentBuffBetweenTeam = 10;
             }else{
-                 procentBuffBetweenTeam = 3;
+                 procentBuffBetweenTeam = 6;
             }
             
             for(let i = 0; i<5000; i++){
@@ -49,6 +49,7 @@ export class Draw{
                 this.drawingAlgorithm(this.comparedArr, this.teamNumber)
                 this.teamSkillDif(this.teamsSkillRates);
                 if(this.differenceMaxMin<=procentBuffBetweenTeam){
+                    console.log('losowanie udane');
                     break
                 }
                 this.teamsSkillRates.length=0;
