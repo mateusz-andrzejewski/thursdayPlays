@@ -3,101 +3,120 @@ export class RenderTeams{
         this.teams = teams;
         this.section = document.querySelector('.results');
         this.toHide = document.querySelector('.results-messageBefore');
-        this.title=null;
-        this.skillRate=null;
-        this.currentTeam = null;
-        this.teamCnt = null;
+        // this.title=null;
+        // this.skillRate=null;
+        // this.teamCnt = null;
+        // this.skillrates = null;
+
+        this.teamsDivs=[];
         
         this.currentSlide = 0;
         this.prevBtn=null;
         this.nextBtn=null;
 
-        this.renderInterface();
-        this.createTeam(teams, this.currentSlide);
-        this.slidePrev(this.prevBtn, this.currentSlide, this.teams);
-        this.slideNext(this.nextBtn, this.currentSlide, this.teams);
-    }
-    renderInterface(){
-        // console.log(teams);
-        this.toHide.setAttribute('style', 'display: none');
-      
-        //prevBtn
-        const prevBtn = document.createElement('div');
-        prevBtn.classList.add('results-prevButton');
-        this.section.appendChild(prevBtn);
-        const iconPrev = document.createElement('i');
-        iconPrev.classList.add('fas');
-        iconPrev.classList.add('fa-chevron-circle-right');
-        prevBtn.appendChild(iconPrev);
-        this.prevBtn=prevBtn;
-
-        //nextBtn
-        const nextBtn = document.createElement('div');
-        nextBtn.classList.add('results-nextButton');
-        this.section.appendChild(nextBtn);
-        const iconNext = document.createElement('i');
-        iconNext.classList.add('fas');
-        iconNext.classList.add('fa-chevron-circle-right');
-        nextBtn.appendChild(iconNext);
-        this.nextBtn=nextBtn;
+        this.generateTeams(this.teams);
+        this.showSlide(this.currentSlide);
+     
         
     }
-    createTeam(teams, currentSlide){
+    generateTeams(teams){
+        for(const team of teams){
+            //cnt na drużynę
+            const cntForTeam = document.createElement('section');
+            cntForTeam.classList.add('resluts-box')
+            this.section.appendChild(cntForTeam);
+            //tytuł
+            const title = document.createElement('h3');
+            title.classList.add('results-teamName');
+            title.textContent = `Team ${teams.indexOf(team)+1}`;
+            cntForTeam.appendChild(title);
+            //skillRate
+            const skillRate = document.createElement('div');
+            skillRate.classList.add('results-skillRate');
+            skillRate.textContent = this.teamSkillRating(team);
+            cntForTeam.appendChild(skillRate);
+            //players cnt
+            const playersCnt = document.createElement('div');
+            playersCnt.classList.add('results-playersCnt');
+            cntForTeam.appendChild(playersCnt);
+            //gracze do players cnt
+            team.forEach(el=>{
+                const cnt = document.createElement('div');
+                cnt.classList.add('results-playersCnt-player');
+                playersCnt.appendChild(cnt);
 
-        //nazwa drużyny slajdu
-        const h3 = document.createElement('h3');
-        h3.classList.add('results-teamName');
-        this.section.appendChild(h3)
-        this.title = h3;
-        h3.textContent=`Team ${currentSlide + 1}`;
-  
-        //wskaźnik skillRate
-        const skillRate = document.createElement('div');
-        skillRate.classList.add('results-skillRate');
-        this.section.appendChild(skillRate);
-        this.skillRate = skillRate;
-        skillRate.textContent='72%'; //do usunięcia
+                const name = document.createElement('span');
+                name.classList.add('results-playersCnt-player-name');
+                name.textContent = el.name;
+                cnt.appendChild(name);
 
-        //teamCnt
-        const teamCnt = document.createElement('div');
-        teamCnt.classList.add('results-playersCnt');
-        this.teamCnt = teamCnt;
-        this.section.appendChild(teamCnt);
+                const position = document.createElement('span');
+                position.classList.add('results-playersCnt-player-position');
+                position.textContent=el.position;
+                cnt.appendChild(position);
 
-        //utworzenie zawodników
-        for(const player of teams[currentSlide]){
-            const div = document.createElement('div');
-            div.classList.add('results-playersCnt-player');
-            this.teamCnt.appendChild(div);
-
-            const spanName = document.createElement('span');
-            spanName.classList.add('results-playersCnt-player-name');
-            spanName.textContent = player.name;
-            div.appendChild(spanName);
-
-            const spanPosition = document.createElement('span');
-            spanPosition.classList.add('results-playersCnt-player-position');
-            spanPosition.textContent = player.position;
-            div.appendChild(spanPosition);
-
+            })
+            cntForTeam.setAttribute('style', 'display: none');
+            this.teamsDivs.push(cntForTeam);
         }
     }
-    slidePrev(btn, currentSlide, teams){
-        btn.addEventListener('click', e=>{
-            currentSlide--
-            if(currentSlide<0){
-                currentSlide=teams.length-1;
-            }
-            this.createTeam(teams, currentSlide);
-        })
+    teamSkillRating(team){
+        const sRofTeam = [];
+        team.forEach(el=>sRofTeam.push(el.skillRate));
+        const avg =((sRofTeam.reduce((prev, next)=> (+prev) + (+next)) / (team.length * 5))*100).toFixed(0);
+        return `${avg.toString()}%`
     }
-    slideNext(btn, currentSlide, teams){
-        btn.addEventListener('click', e=>{
-            currentSlide++
-            if(currentSlide>teams.length-1){
-                currentSlide=0;
-            }
-            this.createTeam(teams, currentSlide);
-        })
+    showSlide(currentSlide){
+        this.toHide.setAttribute('style', 'display: none');
+        if(this.prevBtn!==null){
+            const prevBtn=this.section.querySelector('.results-prevButton');
+            prevBtn.remove();
+            const nextBtn=this.section.querySelector('.results-nextButton');
+            nextBtn.remove();
+        }
+        this.generateInterface();
+        this.prevBtn.addEventListener('click', ()=>this.slidePrev())
+        this.nextBtn.addEventListener('click', ()=>this.slideNext())
+        this.teamsDivs[this.currentSlide].setAttribute('style', 'display: block');
+
     }
+    generateInterface(){
+        const prevBtn = document.createElement('div');
+        prevBtn.classList.add('results-prevButton');
+        this.prevBtn = prevBtn;
+        const iPrev = document.createElement('i');
+        iPrev.classList.add('fas');
+        iPrev.classList.add('fa-chevron-circle-right');
+        prevBtn.appendChild(iPrev);
+        this.section.appendChild(prevBtn);
+
+        
+        const nextBtn = document.createElement('div');
+        nextBtn.classList.add('results-nextButton');
+        this.nextBtn = nextBtn;
+        const iNext = document.createElement('i');
+        iNext.classList.add('fas');
+        iNext.classList.add('fa-chevron-circle-right');
+        nextBtn.appendChild(iNext);
+        this.section.appendChild(nextBtn);
+    }
+    slidePrev(){
+        this.teamsDivs[this.currentSlide].setAttribute('style', 'display: none');
+        this.currentSlide--;
+        if(this.currentSlide<0){
+            this.currentSlide = this.teams.length - 1;
+        }
+
+        this.showSlide(this.currentSlide, this.teams)
+    }
+    slideNext(){
+        this.teamsDivs[this.currentSlide].setAttribute('style', 'display: none');
+        this.currentSlide++;
+        if(this.currentSlide>this.teams.length - 1){
+            this.currentSlide = 0;
+        }
+
+        this.showSlide(this.currentSlide, this.teams)
+    }
+
 }
