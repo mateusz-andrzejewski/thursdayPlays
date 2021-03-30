@@ -1,9 +1,9 @@
 import {Players} from './players.js'
 import {RenderTeams} from './renderTeams.js'
 export class Draw{
-    constructor(arrActivePlayers){
+    constructor(arrActivePlayers, allPlayers){
         this.arrActivePlayers = arrActivePlayers;
-        this.arrAllPlayers = new Players().players;
+        this.arrAllPlayers = allPlayers;
         this.teamNumber = null;
         this.drawBtn = document.querySelector('.draw');
         this.comparedArr = null;
