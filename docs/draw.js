@@ -57,7 +57,8 @@ export class Draw{
             console.log(this.arrTeams);
             //  zwrócenie dalej treści do do rednerTeams.js
             return new RenderTeams(this.arrTeams);    
-        })       
+        })  
+                
     }
     compare(active, all){
         const activeNames = active.map(el=> el.name);
