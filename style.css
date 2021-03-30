@@ -253,6 +253,7 @@ body {
   padding: 0.2rem;
   overflow-y: scroll;
   border: 1px solid rgba(255, 255, 255, 0.623);
+  transition: 0.2s;
 }
 .results-playersCnt-player {
   display: flex;
@@ -261,6 +262,7 @@ body {
   height: 2rem;
   margin: 0.3rem;
   font-size: 0.7rem;
+  transition: 0.5s;
 }
 .results-playersCnt-player-name {
   display: flex;

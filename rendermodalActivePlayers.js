@@ -1,7 +1,8 @@
 import {Draw} from './draw.js'
 export class RenderModalActivePlayers  {
-    constructor(arrActivePlayers){
+    constructor(arrActivePlayers, allPlayersFresh){
         this.arrActivePlayers = arrActivePlayers;
+        this.allPlayersFresh = allPlayersFresh;
         this.cnt=document.querySelector('.cnt');
         this.actPlayersIcon = document.querySelector('.menu-vievs-active');
         this.closeButton = null;
@@ -82,7 +83,7 @@ export class RenderModalActivePlayers  {
             this.deleteActivePlayer()
 
             //utworzenie klasy Draw
-             return new Draw(this.arrActivePlayers);
+             return new Draw(this.arrActivePlayers, this.allPlayersFresh);
              
         })
     }

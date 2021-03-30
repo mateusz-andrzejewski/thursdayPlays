@@ -171,7 +171,7 @@ export class RenderModalAllPlayers{
 
     //   console.log(this.playersActiveStatus);
 
-      return new RenderModalActivePlayers(this.playersActiveStatus);
+      return new RenderModalActivePlayers(this.playersActiveStatus, this.instanceOfPlayers);
 
       })
       
