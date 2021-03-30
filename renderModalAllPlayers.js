@@ -6,6 +6,7 @@ export class RenderModalAllPlayers{
         this.instanceOfPlayers = arrOfAllPlayers; ////ew us
         this.cnt = document.querySelector('.cnt');
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
+        this.activePlayersIcon = document.querySelector('.menu-vievs-active');
 
         this.closeButton = null;
         this.modalAllPlayersCntList = null;
@@ -17,6 +18,7 @@ export class RenderModalAllPlayers{
         this.showAllPlayersModal();
     }
     showAllPlayersModal(){
+        this.activePlayersIcon.addEventListener('click', this.messageActive)
         this.allPlayersIcon.addEventListener('click', e=>{
             //sprawdzenie czy taki modal już istnieje
             if(document.querySelector('.modal-allPlayers')) return;
@@ -114,6 +116,9 @@ export class RenderModalAllPlayers{
             //usunięcie elementu modal(czyli sekcji)
             modal.remove();
         })
+    }
+    messageActive(){
+        window.alert('First step is set who is active today in allPlayers tab😊');
     }
 
     addAllPlayersToModal(){
