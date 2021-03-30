@@ -54,10 +54,9 @@ export class Draw{
                 }
                 this.teamsSkillRates.length=0;
             }
-            //  zwrócenie dalej treści do do rednerTeams.js
             console.log(this.arrTeams);
-            return new RenderTeams(this.arrTeams);
-            
+            //  zwrócenie dalej treści do do rednerTeams.js
+            return new RenderTeams(this.arrTeams);    
         })       
     }
     compare(active, all){

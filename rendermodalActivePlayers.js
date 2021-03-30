@@ -1,4 +1,5 @@
 import {Draw} from './draw.js'
+import { RenderModalAllPlayers } from './renderModalAllPlayers.js';
 export class RenderModalActivePlayers  {
     constructor(arrActivePlayers, allPlayersFresh){
         this.arrActivePlayers = arrActivePlayers;
@@ -9,12 +10,14 @@ export class RenderModalActivePlayers  {
         this.modalActivePlayersCntList = null;
         this.minusIcon = null;
         this.playersCounter=null;
+        this.messageActive = new RenderModalAllPlayers;
         
 
         this.showActivePlayersModal();
     }
 
     showActivePlayersModal(){
+        this.actPlayersIcon.removeEventListener('click', this.messageActive.messageActive)
         this.actPlayersIcon.addEventListener('click', e=>{
             //sprawdzenie czy taki modal już istnieje
             if(document.querySelector('.modal-activePlayers')) return;
