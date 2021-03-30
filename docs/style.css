@@ -97,7 +97,7 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-60%);
-  width: 40%;
+  width: 50%;
   margin: 1rem;
   padding: 5px;
   background-color: #000;
@@ -154,6 +154,7 @@ body {
 }
 .draw-button {
   width: 90%;
+  height: 90%;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -200,7 +201,7 @@ body {
   position: absolute;
   left: 50%;
   top: 1.5%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0);
   text-align: center;
   margin: 10px 0;
   text-transform: uppercase;
@@ -208,6 +209,15 @@ body {
   padding: 5px;
   border-radius: 5px;
   background-color: #000;
+  animation: aniTeamName 0.2s ease-out forwards;
+}
+@keyframes aniTeamName {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
 .results-skillRate {
   display: flex;
@@ -221,6 +231,16 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 5px 0 white;
   background-color: rgba(0, 0, 0, 0.562);
+  transform: scale(0);
+  animation: aniSkillRate 0.1s 0.3s ease-in forwards;
+}
+@keyframes aniSkillRate {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .results-prevButton,
 .results-nextButton {
@@ -247,13 +267,28 @@ body {
   top: 25%;
   bottom: 3%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0);
+  opacity: 1;
   width: 65%;
   border-radius: 5px;
   padding: 0.2rem;
   overflow-y: scroll;
   border: 1px solid rgba(255, 255, 255, 0.623);
-  transition: 0.2s;
+  animation: aniPlayersCtn 0.2s 0.1s ease-out forwards;
+}
+@keyframes aniPlayersCtn {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
 }
 .results-playersCnt-player {
   display: flex;
@@ -313,6 +348,16 @@ footer {
   );
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
+  transform: scale(0);
+  animation: aniModal 0.2s ease-out both;
+}
+@keyframes aniModal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .modal-allPlayers-buttonClose,
@@ -459,6 +504,8 @@ footer {
   );
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
+  transform: scale(0);
+  animation: aniModal 0.2s ease-out forwards;
 }
 .modal-addPlayer-buttonClose {
   position: absolute;
@@ -545,4 +592,62 @@ footer {
   background-color: white;
   color: rgb(175, 174, 174);
   text-align: center;
+}
+
+@media (max-width: 300px) {
+  .menu-vievs-all-text {
+    font-size: 10px;
+  }
+}
+@media (min-width: 530px) {
+  .draw {
+    height: 8%;
+  }
+  .draw-button {
+    font-size: 25px;
+  }
+}
+@media (min-width: 930px) {
+  .draw {
+    height: 8%;
+    width: 50%;
+    top: 42.5%;
+  }
+}
+@media (min-width: 1024px) {
+  .menu-views div {
+    font-size: 2.4rem;
+  }
+  .menu-views div i {
+    font-size: 4rem;
+  }
+  .setup {
+    height: 15%;
+  }
+  .setup h3 {
+    font-size: 2rem;
+  }
+  .setup-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    font-size: 1.8rem;
+  }
+  .setup-form-input {
+    height: 70px;
+    width: 70px;
+    align-self: center;
+    font-size: 1.8rem;
+  }
+  .draw {
+    top: 35%;
+    height: 10%;
+  }
+  .draw-button {
+    font-size: 4rem;
+  }
+  .results {
+    top: 49%;
+  }
 }
