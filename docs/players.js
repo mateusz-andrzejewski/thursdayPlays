@@ -34,7 +34,7 @@
                 skillRate: '4'
             },
             {
-                name: 'Carmine de Lucia',
+                name: 'Carmine De Lucia',
                 position: 'D',
                 skillRate: '4'
             },

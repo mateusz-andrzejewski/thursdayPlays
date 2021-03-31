@@ -593,7 +593,17 @@ footer {
   color: rgb(175, 174, 174);
   text-align: center;
 }
-
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
 @media (max-width: 300px) {
   .menu-vievs-all-text {
     font-size: 10px;
@@ -607,47 +617,120 @@ footer {
     font-size: 25px;
   }
 }
-@media (min-width: 930px) {
-  .draw {
-    height: 8%;
-    width: 50%;
-    top: 42.5%;
-  }
-}
-@media (min-width: 1024px) {
+@media (min-width: 700px) {
   .menu-views div {
-    font-size: 2.4rem;
+    font-size: 0.8rem;
   }
   .menu-views div i {
-    font-size: 4rem;
+    font-size: 2.8rem;
   }
   .setup {
     height: 15%;
   }
   .setup h3 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .setup-form {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 30%;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-left: 30%;
   }
   .setup-form-input {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     align-self: center;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-right: 20%;
   }
   .draw {
     top: 35%;
     height: 10%;
   }
   .draw-button {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .results {
     top: 49%;
+  }
+  .results-teamName {
+    font-size: 3.5rem;
+  }
+  .results-skillRate {
+    width: 8vh;
+    height: 8vh;
+    font-size: 2.5rem;
+  }
+  .results-playersCnt-player {
+    height: 5rem;
+    font-size: 1.8rem;
+  }
+  .results-playersCnt-player-position {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  .fas {
+    font-size: 3rem;
+  }
+  .results-messageBefore {
+    font-size: 2rem;
+  }
+  footer {
+    font-size: 1.5rem;
+  }
+  .modal-allPlayers-cnt-title,
+  .modal-activePlayers-cnt-title {
+    font-size: 2rem;
+  }
+  .modal-allPlayers-cnt-input {
+    font-size: 1.5rem;
+  }
+  .modal-allPlayers-playerCounter {
+    font-size: 3rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .modal-allPlayers-cnt-list-title,
+  .modal-activePlayers-cnt-list-title {
+    font-size: 1.9rem;
+  }
+  .modal-activePlayers-cnt-list-player {
+    height: 4.5rem;
+  }
+  .modal-activePlayers-cnt-list-player-name {
+    font-size: 1.9rem;
+  }
+  .modal-addPlayer-title,
+  .modal-addPlayer-add {
+    font-size: 2rem;
+  }
+  .modal-addPlayer-cnt-nameStack-fullName,
+  .modal-addPlayer-cnt-positionStack-string,
+  .modal-addPlayer-cnt-skillStack-string {
+    font-size: 1.9rem;
+  }
+  .modal-addPlayer-cnt-nameStack-fullNameString,
+  .modal-addPlayer-cnt-positionStack-positon-options,
+  .modal-addPlayer-cnt-positionStack-skill-options {
+    font-size: 1.6rem;
+  }
+  .modal-addPlayer-cnt-nameStack-fullNameString {
+    height: 40px;
+  }
+
+  .modal-allPlayers-cnt-list-player {
+    font-size: 1.5rem;
+    height: 4.5rem;
+  }
+  .modal-allPlayers-cnt-list-player-name {
+    font-size: 2.4rem;
+  }
+  .modal-allPlayers-cnt-list-player-position {
+    font-size: 2.4rem;
+  }
+  .modal-allPlayers-cnt-confirm {
+    font-size: 2.4rem;
   }
 }
