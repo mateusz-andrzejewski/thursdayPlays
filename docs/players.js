@@ -4,157 +4,157 @@
     constructor(update){
         this.players = [
             {
-                name: 'Mateusz Andrzejewski',
+                name: 'mateusz andrzejewski',
                 position: 'A',
                 skillRate: '5'
             },
             {
-                name: 'Łukasz Błaszczuk',
+                name: 'łukasz błaszczuk',
                 position: 'D',
                 skillRate: '1'
             },
             {
-                name: 'Przemysław Celadyn',
+                name: 'przemysław celadyn',
                 position: 'G',
                 skillRate: '4'
             },
             {
-                name: 'Dawid Czekała',
+                name: 'dawid czekała',
                 position: 'A',
                 skillRate: '2'
             },
             {
-                name: 'Dawid Dąbrowski',
+                name: 'dawid dąbrowski',
                 position: 'D',
                 skillRate: '4'
             },
             {
-                name: 'Łukasz Dąbrowski',
+                name: 'łukasz dąbrowski',
                 position: 'D',
                 skillRate: '4'
             },
             {
-                name: 'Carmine De Lucia',
+                name: 'carmine de lucia',
                 position: 'D',
                 skillRate: '4'
             },
             {
-                name: 'Michał Jabłoński',
+                name: 'michał jabłoński',
                 position: 'A',
                 skillRate: '4'
             },
             {
-                name: 'Mateusz Jeż',
+                name: 'mateusz jeż',
                 position: 'A',
                 skillRate: '1'
             },
             {
-                name: 'Grzegorz Jóźwik',
+                name: 'grzegorz jóźwik',
                 position: 'D',
                 skillRate: '3'
             },
             {
-                name: 'Szymon Kaczyński',
+                name: 'szymon kaczyński',
                 position: 'A',
                 skillRate: '2'
             },
             {
-                name: 'Paweł Karczewski',
+                name: 'paweł karczewski',
                 position: 'A',
                 skillRate: '2'
             },
             {
-                name: 'Radosław Kosiński',
+                name: 'radosław kosiński',
                 position: 'D',
                 skillRate: '3'
             },
             {
-                name: 'Adam Kowalski',
+                name: 'adam kowalski',
                 position: 'D',
                 skillRate: '4'
             },
             {
-                name: 'Radosław Kowynia',
+                name: 'radosław kowynia',
                 position: 'A',
                 skillRate: '5'
             },
             {
-                name: 'Arkadiusz Krawczyk',
+                name: 'arkadiusz krawczyk',
                 position: 'D',
                 skillRate: '2'
             },
             {
-                name: 'Karol Krzyżankiewicz',
+                name: 'karol krzyżankiewicz',
                 position: 'D',
                 skillRate: '3'
             },
             {
-                name: 'Piotr Kuźniewicz',
+                name: 'piotr kuźniewicz',
                 position: 'A',
                 skillRate: '1'
             },
             {
-                name: 'Michał Kuźniewicz',
+                name: 'michał kuźniewicz',
                 position: 'D',
                 skillRate: '2'
             },
             {
-                name: 'Kamil Limok',
+                name: 'kamil limok',
                 position: 'D',
                 skillRate: '2'
             },
             {
-                name: 'Mateusz Malik',
+                name: 'mateusz malik',
                 position: 'A',
                 skillRate: '5'
             },
             {
-                name: 'Marcin Markowski',
+                name: 'marcin markowski',
                 position: 'A',
                 skillRate: '3'
             },
             {
-                name: 'Tomasz Nowok',
+                name: 'tomasz nowok',
                 position: 'G',
                 skillRate: '4'
             },
             {
-                name: 'Jakub Piechocki',
+                name: 'jakub piechocki',
                 position: 'D',
                 skillRate: '2'
             },
             {
-                name: 'Dawid Ptak',
+                name: 'dawid ptak',
                 position: 'A',
                 skillRate: '4'
             },
             {
-                name: 'Bartek Sadło',
+                name: 'bartek sadło',
                 position: 'A',
                 skillRate: '2'
             },
             {
-                name: 'Mateusz Sochacki',
+                name: 'mateusz sochacki',
                 position: 'G',
                 skillRate: '4'
             },
             {
-                name: 'Wojciech Trojanowski',
+                name: 'wojciech trojanowski',
                 position: 'A',
                 skillRate: '2'
             },
             {
-                name: 'Jakub Umywalnik',
+                name: 'jakub umywalnik',
                 position: 'A',
                 skillRate: '3'
             },
             {
-                name: 'Kamil Wawoczny',
+                name: 'kamil wawoczny',
                 position: 'D',
                 skillRate: '2'
             },
             {
-                name: 'Artur Zaczkowski',
+                name: 'artur zaczkowski',
                 position: 'A',
                 skillRate: '1'
             },
