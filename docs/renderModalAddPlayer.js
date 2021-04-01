@@ -155,9 +155,11 @@ export class RenderModalAddPlayer{
     
     addNewPlayer(){
         this.modalAddPlayerAdd.addEventListener('click', e=>{
+        //zabezpieczenie przed duplikatami
+            if(this.instanceOfAllPlayers.find(el=>el.name===this.modalAddPlayerCntNameStackFullNameString.value.toLowerCase())) return window.alert(`This player exists in allPlayers tab, try to find out him!😜`);
             if(this.modalAddPlayerCntNameStackFullNameString.value.length===0 || this.modalAddPlayerCntPositionStackPositionOptions.value.length===0 ||  this.modalAddPlayerCntPositionStackSkillOptions.value.length===0) return window.alert('Please put all info!');
             this.instanceOfAllPlayers.push({
-                name: this.modalAddPlayerCntNameStackFullNameString.value,
+                name: this.modalAddPlayerCntNameStackFullNameString.value.toLowerCase(),
                 position: this.modalAddPlayerCntPositionStackPositionOptions.value,
                 skillRate: this.modalAddPlayerCntPositionStackSkillOptions.value
             })
