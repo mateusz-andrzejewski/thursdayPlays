@@ -3,23 +3,28 @@ export class RenderTeams{
         this.teams = teams;
         this.section = document.querySelector('.results');
         this.toHide = document.querySelector('.results-messageBefore');
-        // this.title=null;
-        // this.skillRate=null;
-        // this.teamCnt = null;
-        // this.skillrates = null;
 
         this.teamsDivs=[];
         
         this.currentSlide = 0;
         this.prevBtn=null;
         this.nextBtn=null;
-
+        //czyszczenie sekcji wyników z poprzedniego losowania && naprawienie błędu z podwójnym activePlayers
+        if(this.section.children.length>1){
+            [...this.section.children].forEach(el=>{
+                if(el !== this.toHide){
+                    el.remove();
+                }
+            })
+            console.log(this.section.children);
+        }
         this.generateTeams(this.teams);
         this.showSlide(this.currentSlide);
      
         
     }
     generateTeams(teams){
+        
         for(const team of teams){
             //cnt na drużynę
             const cntForTeam = document.createElement('section');
@@ -59,6 +64,7 @@ export class RenderTeams{
             cntForTeam.setAttribute('style', 'display: none');
             this.teamsDivs.push(cntForTeam);
         }
+
     }
     teamSkillRating(team){
         const sRofTeam = [];
