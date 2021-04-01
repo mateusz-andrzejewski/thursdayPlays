@@ -447,6 +447,22 @@ footer {
   border-radius: 5px;
   text-align: center;
 }
+.modal-activePlayers-removeAll {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 13.28px;
+  width: 80%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.fa-minus-circle {
+  font-size: 1.4rem;
+}
 .modal-allPlayers-cnt-list-player,
 .modal-activePlayers-cnt-list-player {
   display: flex;

@@ -16,6 +16,10 @@ export class Draw{
     }
     showResults(){
         this.drawBtn.addEventListener('click', e=>{
+            //zabezpieczenie przed pusta tablica
+            if(this.arrActivePlayers.length<=1)
+            return window.alert(`You didn't choose enough players, please check activePlayers tab 🤔`);
+
             //zaciągnięcie danych z inputa
             this.teamNumber=Math.floor(document.querySelector('.setup-form-input').value);
             //zabezpieczenie przed pustym inputem
@@ -96,14 +100,6 @@ export class Draw{
             this.teamsSkillRates.push(this.teamSkillRating(this.arrTeams, itAvg));
             itAvg++
         }
-        // //sprawdzenie średnich odchyleń w średnich
-        // if(this.teamSkillDif(this.teamsSkillRates)<10){
-        //     return this.arrTeams;
-        // }else{
-        //     console.log("solve isn't finded yet", this.teamsSkillRates, this.arrTeams);
-        //     this.teamsSkillRates.length=0;
-        //     return false
-        // }
         
     }
     teamCreator(numberOfTeams){

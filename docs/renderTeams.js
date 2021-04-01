@@ -16,7 +16,6 @@ export class RenderTeams{
                     el.remove();
                 }
             })
-            console.log(this.section.children);
         }
         this.generateTeams(this.teams);
         this.showSlide(this.currentSlide);
