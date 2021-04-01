@@ -11,6 +11,7 @@ export class RenderModalActivePlayers  {
         this.minusIcon = null;
         this.playersCounter=null;
         this.messageActive = new RenderModalAllPlayers;
+        this.removeAll = null;
         
 
         this.showActivePlayersModal();
@@ -51,8 +52,7 @@ export class RenderModalActivePlayers  {
             playersCounter.textContent=this.arrActivePlayers.length;
             playersCounter.classList.add('modal-allPlayers-playerCounter');
             modalActivePlayers.appendChild(playersCounter);
-            this.playersCounter=playersCounter
-
+            this.playersCounter=playersCounter;
 
             //utworzenie kontenera
             const modalActivePlayersCnt = document.createElement('div');
@@ -65,19 +65,29 @@ export class RenderModalActivePlayers  {
             modalActivePlayersCntTitle.classList.add('modal-activePlayers-cnt-title');
             modalActivePlayersCnt.appendChild(modalActivePlayersCntTitle);
 
-
             //utworzenie kontenera na liste zawodników
             const modalActivePlayersCntList = document.createElement('div');
             modalActivePlayersCntList.classList.add('modal-activePlayers-cnt-list');
             modalActivePlayersCnt.appendChild(modalActivePlayersCntList);
             this.modalActivePlayersCntList = modalActivePlayersCntList;
 
+            //utworzenie przycisku removeAll
+            const removeAll = document.createElement('div');
+            removeAll.classList.add('modal-activePlayers-removeAll');
+            removeAll.textContent='Remove all players';
+            const iconRemoveAll = document.createElement('i');
+            iconRemoveAll.classList.add('fas');
+            iconRemoveAll.classList.add('fa-minus-circle');
+            removeAll.appendChild(iconRemoveAll);
+            modalActivePlayersCntList.appendChild(removeAll);
+            this.removeAll = removeAll;
+            this.deleteAllPlayers();
+
             //utworzenie tytułu dla kontenera na liste zawodników
             const modalActivePlayersCntListTitle = document.createElement('h5');
             modalActivePlayersCntListTitle.classList.add('modal-activePlayers-cnt-list-title');
             modalActivePlayersCntListTitle.textContent='Click minus icon to remove the player';
             modalActivePlayersCntList.appendChild(modalActivePlayersCntListTitle);
-
 
             //wywołanie funkcji dodającyj aktywnych graczy do modala
             this.addActivePlayersToModal()
@@ -151,6 +161,14 @@ export class RenderModalActivePlayers  {
             
         })
         
+    }
+
+    deleteAllPlayers(){
+        this.removeAll.addEventListener('click', e=>{
+            this.arrActivePlayers.length=0;
+            document.querySelectorAll('.modal-activePlayers-cnt-list-player').forEach(el=>el.remove());
+            this.countPlayers();
+        })
     }
 
     countPlayers(){
