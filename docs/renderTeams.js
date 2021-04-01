@@ -5,10 +5,11 @@ export class RenderTeams{
         this.toHide = document.querySelector('.results-messageBefore');
 
         this.teamsDivs=[];
-        
         this.currentSlide = 0;
         this.prevBtn=null;
         this.nextBtn=null;
+        this.wholeTxt=null;
+        this.copyBtn=null;
         //czyszczenie sekcji wyników z poprzedniego losowania && naprawienie błędu z podwójnym activePlayers
         if(this.section.children.length>1){
             [...this.section.children].forEach(el=>{
@@ -19,7 +20,8 @@ export class RenderTeams{
         }
         this.generateTeams(this.teams);
         this.showSlide(this.currentSlide);
-     
+        this.makeResultTxt();
+        
         
     }
     generateTeams(teams){
@@ -61,7 +63,7 @@ export class RenderTeams{
 
             })
             cntForTeam.setAttribute('style', 'display: none');
-            this.teamsDivs.push(cntForTeam);
+            this.teamsDivs.push(cntForTeam);      
         }
 
     }
@@ -78,11 +80,14 @@ export class RenderTeams{
             prevBtn.remove();
             const nextBtn=this.section.querySelector('.results-nextButton');
             nextBtn.remove();
+            const copyTxt = this.section.querySelector('.results-copyBtn');
+            copyTxt.remove();
         }
         this.generateInterface();
         this.prevBtn.addEventListener('click', ()=>this.slidePrev())
         this.nextBtn.addEventListener('click', ()=>this.slideNext())
         this.teamsDivs[this.currentSlide].setAttribute('style', 'display: block');
+        this.copyTxt()
 
     }
     generateInterface(){
@@ -104,6 +109,15 @@ export class RenderTeams{
         iNext.classList.add('fa-chevron-circle-right');
         nextBtn.appendChild(iNext);
         this.section.appendChild(nextBtn);
+
+        const copyBtn = document.createElement('div');
+        copyBtn.classList.add('results-copyBtn');
+        this.copyBtn = copyBtn;
+        const iCopy = document.createElement('i');
+        iCopy.classList.add("fas");
+        iCopy.classList.add("fa-copy");
+        copyBtn.appendChild(iCopy);
+        this.section.appendChild(copyBtn);
     }
     slidePrev(){
         this.teamsDivs[this.currentSlide].setAttribute('style', 'display: none');
@@ -123,5 +137,31 @@ export class RenderTeams{
 
         this.showSlide(this.currentSlide, this.teams)
     }
+    makeResultTxt(){
+        const srs = [...document.querySelectorAll('.results-skillRate')]
+        const txtTeams=[];
+        for(const team of this.teams){
+            const arr=[];
+            const teamNum = `Team ${this.teams.indexOf(team)+1} `;
+            const skillRate = `SkillRate: ${srs[this.teams.indexOf(team)].innerText}`;
+            arr.push(teamNum);
+            arr.push(skillRate);
+            team.forEach(el=>arr.push(el.name))
+            txtTeams.push(arr);
+        }
+        const wholeTxt = JSON.stringify(txtTeams).replace(/"/gi,"").replace(/,/gi," ");
+        this.wholeTxt = wholeTxt;
+    }
+    copyTxt(){
+        this.copyBtn.addEventListener('click', e=>{
+            const tempInput = document.createElement('input');
+            tempInput.value = this.wholeTxt;
+            document.body.appendChild(tempInput)
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            window.alert(`Teams have been copied to your clipboard 😉`);
+        })
 
+    }
 }

@@ -242,6 +242,19 @@ body {
     transform: scale(1);
   }
 }
+.results-copyBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 3%;
+  left: 18%;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 white;
+  background-color: rgba(0, 0, 0, 0.562);
+}
 .results-prevButton,
 .results-nextButton {
   display: flex;
