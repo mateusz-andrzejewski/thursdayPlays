@@ -80,7 +80,7 @@ export class RenderModalAddPlayer{
             //utworzenie spana w kontenerze na pozycje
             const modalAddPlayerCntPositionStackString = document.createElement('span');
             modalAddPlayerCntPositionStackString.classList.add('modal-addPlayer-cnt-positionStack-string');
-            modalAddPlayerCntPositionStackString.textContent='position (D-def., A-atack., G-goalkeeper)'
+            modalAddPlayerCntPositionStackString.textContent='position (G-goalkeeper, D-defender, A-attacker'
             modalAddPlayerCntPositionStack.appendChild(modalAddPlayerCntPositionStackString);
             //utworzenie selecta
             const modalAddPlayerCntPositionStackPositionOptions = document.createElement('select');

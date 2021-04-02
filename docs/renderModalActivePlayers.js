@@ -72,9 +72,9 @@ export class RenderModalActivePlayers  {
             this.modalActivePlayersCntList = modalActivePlayersCntList;
 
             //utworzenie przycisku removeAll
-            const removeAll = document.createElement('div');
+            const removeAll = document.createElement('h5');
             removeAll.classList.add('modal-activePlayers-removeAll');
-            removeAll.textContent='Remove all players';
+            removeAll.textContent='Remove everyone';
             const iconRemoveAll = document.createElement('i');
             iconRemoveAll.classList.add('fas');
             iconRemoveAll.classList.add('fa-minus-circle');
