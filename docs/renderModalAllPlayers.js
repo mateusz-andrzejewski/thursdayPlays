@@ -212,7 +212,7 @@ export class RenderModalAllPlayers{
 Instructions:
 1) Open all_Players to find and select players, after all press confirm button.
 2) If you can't find out someone, move to add_Player tab, fill form and click "ADD_!".
-3) After players select, go to activePlayers tab and verify your choice, there you can edit list.
+3) Go to activePlayers tab and verify your choice, there you can edit list.
 4) In teams_Settings section put number of teams, it should be an integer.
 5) After above steps, click "DRAW_!" to initialize draw process.
 6) After few second you will see results in bottom section.
