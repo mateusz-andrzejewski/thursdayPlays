@@ -7,7 +7,6 @@ export class RenderModalAllPlayers{
         this.cnt = document.querySelector('.cnt');
         this.allPlayersIcon = document.querySelector('.menu-vievs-all');
         this.activePlayersIcon = document.querySelector('.menu-vievs-active');
-        this.helpIcon = document.querySelector('.menu-views-help');
 
         this.closeButton = null;
         this.modalAllPlayersCntList = null;
@@ -17,7 +16,6 @@ export class RenderModalAllPlayers{
         this.playersCounter = null;
 
         this.showAllPlayersModal();
-        this.helpViewer(this.helpIcon);
     }
     showAllPlayersModal(){
         this.activePlayersIcon.addEventListener('click', this.messageActive)
@@ -205,21 +203,6 @@ export class RenderModalAllPlayers{
     countPlayers(){
         const value = this.modalAllPlayersCntList.getElementsByClassName('activePlayer').length
         this.playersCounter.textContent = value;
-    }
-    helpViewer(icon){
-        icon.addEventListener('click', e=>{
-            window.alert(`
-Instructions:
-1) Open all_Players to find and select players, after all press confirm button.
-2) If you can't find out someone, move to add_Player tab, fill form and click "ADD_!".
-3) Go to activePlayers tab and verify your choice, there you can edit list.
-4) In teams_Settings section put number of teams, it should be an integer.
-5) After above steps, click "DRAW_!" to initialize draw process.
-6) After few second you will see results in bottom section.
-7) For change slides use arrows.
-8) If you want copy to clipboard all the result of draw just click copy icon.
-            `)
-        })
     }
 }
 

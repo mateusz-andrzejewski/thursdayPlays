@@ -48,9 +48,9 @@ body {
 
 .menu-views {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 95%;
+  width: 75%;
   height: 75%;
 }
 .menu-views > * {
@@ -58,8 +58,9 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   cursor: pointer;
+  margin: 4px;
 }
 
 .menu-views > * > i {
@@ -71,12 +72,17 @@ body {
   padding: 5px;
   border-radius: 2.5px;
 }
+.menu-views-help {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.menu-views-help i {
+  font-size: 1.6rem;
+}
 
 /* second part  - setup*/
 .setup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   position: absolute;
   top: 19%;
   left: 50%;
@@ -84,7 +90,7 @@ body {
   width: 95%;
   background-color: #000;
   width: 90%;
-  height: 25%;
+  height: 15%;
   background: linear-gradient(
     to bottom,
     var(--backgroundOne) -60%,
@@ -93,23 +99,27 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
 }
+.setup-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
 .setup-title {
-  position: relative;
-  left: 50%;
-  transform: translateX(-60%);
-  width: 50%;
-  margin: 1rem;
+  width: 70%;
   padding: 5px;
   background-color: #000;
   border-radius: 5px;
   text-align: center;
+  font-size: 1rem;
 }
 .setup-form {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
-  margin: 0.5rem;
+  width: 70%;
   background-color: black;
   padding: 0.5rem;
   border-radius: 5px;
@@ -119,17 +129,15 @@ body {
   display: block;
 }
 .setup-form-input {
-  position: absolute;
-  right: 5%;
-  width: 30%;
-  height: 2rem;
+  width: 25%;
+  height: 100%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   border-radius: 5px;
 }
 .setup-form-input::placeholder {
   color: rgb(175, 174, 174);
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 }
 
 /*  third part - button Draw!*/
@@ -138,7 +146,7 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -151,6 +159,7 @@ body {
   );
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
+  cursor: pointer;
 }
 .draw-button {
   width: 90%;
@@ -164,21 +173,24 @@ body {
   color: white;
   padding: 5px;
   border-radius: 5px;
+  transition: 0.2s;
+}
+.draw-button:hover {
+  background-color: tomato;
 }
 /* fourth part - Results */
 .results {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 58%;
-  bottom: 5%;
+  top: 48%;
+  bottom: 3.5%;
   left: 50%;
   transform: translateX(-50%);
   width: 95%;
   box-shadow: 0 0 7px 0px white;
 }
 .resluts-box {
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,6 +208,7 @@ body {
   background-color: #000;
   border-radius: 5px;
   padding: 5px;
+  font-size: 1rem;
 }
 .results-teamName {
   position: absolute;
@@ -206,6 +219,7 @@ body {
   margin: 10px 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 1rem;
   padding: 5px;
   border-radius: 5px;
   background-color: #000;
@@ -226,8 +240,9 @@ body {
   position: absolute;
   top: 3%;
   right: 20%;
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.7rem;
   border-radius: 50%;
   box-shadow: 0 0 5px 0 white;
   background-color: rgba(0, 0, 0, 0.562);
@@ -251,8 +266,8 @@ body {
   left: 18%;
   width: 1.7rem;
   height: 1.7rem;
+  font-size: 0.7rem;
   border-radius: 50%;
-  box-shadow: 0 0 5px 0 white;
   background-color: rgba(0, 0, 0, 0.562);
 }
 .results-prevButton,
@@ -277,7 +292,7 @@ body {
 }
 .results-playersCnt {
   position: absolute;
-  top: 25%;
+  top: 18%;
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%) scale(0);
@@ -306,18 +321,20 @@ body {
 .results-playersCnt-player {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  align-items: center;
+  width: 98%;
   height: 2rem;
   margin: 0.3rem;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
+  text-transform: uppercase;
   transition: 0.5s;
 }
 .results-playersCnt-player-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
   width: 80%;
+  height: 100%;
   border-radius: 5px;
   background-color: var(--backgroundTwo);
 }
@@ -325,11 +342,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   box-shadow: 0 0 4px 0 #fff;
   background-color: #000;
+  font-size: 0.7rem;
+  margin-right: 3%;
 }
 /* fifth part - footer */
 footer {
@@ -342,16 +361,28 @@ footer {
   width: 100%;
   font-size: 0.9rem;
   color: white;
+  cursor: pointer;
+}
+a {
+  display: block;
+  margin-left: 10px;
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
 }
 
 /* 1/3 part modal - all_Players AND 2/3 part modal - activePlayers  */
 .modal-allPlayers,
-.modal-activePlayers {
+.modal-activePlayers,
+.modal-addPlayer {
   display: none;
   z-index: 1;
   position: absolute;
-  top: 10%;
-  bottom: 10%;
+  top: 5%;
+  bottom: 45%;
   left: 10%;
   right: 10%;
   background: linear-gradient(
@@ -374,7 +405,8 @@ footer {
 }
 
 .modal-allPlayers-buttonClose,
-.modal-activePlayers-buttonClose {
+.modal-activePlayers-buttonClose,
+.modal-addPlayer-buttonClose {
   position: absolute;
   top: -1rem;
   right: -1rem;
@@ -392,13 +424,14 @@ footer {
   border-radius: 50%;
   background: linear-gradient(to bottom, black, var(--backgroundOne));
   color: white;
-  width: 50px;
-  height: 50px;
-  font-size: 1.8rem;
-  box-shadow: 0 0 20px 0 greenyellow;
+  width: 40px;
+  height: 40px;
+  font-size: 1.6rem;
+  box-shadow: 0 0 20px 0 white;
 }
 .modal-allPlayers-cnt,
-.modal-activePlayers-cnt {
+.modal-activePlayers-cnt,
+.modal-addPlayer-cnt {
   position: absolute;
   top: 2%;
   bottom: 2%;
@@ -406,7 +439,8 @@ footer {
   right: 5%;
 }
 .modal-allPlayers-cnt-title,
-.modal-activePlayers-cnt-title {
+.modal-activePlayers-cnt-title,
+.modal-addPlayer-title {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -423,7 +457,7 @@ footer {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -453,26 +487,18 @@ footer {
   bottom: 5%;
 }
 .modal-allPlayers-cnt-list-title,
-.modal-activePlayers-cnt-list-title {
+.modal-activePlayers-cnt-list-title,
+.modal-activePlayers-removeAll {
   background-color: #000;
   color: white;
+  width: 70%;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-}
-.modal-activePlayers-removeAll {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #000;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 13.28px;
-  width: 80%;
+  font-size: 0.9rem;
   margin-bottom: 10px;
-  font-weight: bold;
 }
+
 .fa-minus-circle {
   font-size: 1.4rem;
 }
@@ -480,14 +506,15 @@ footer {
 .modal-activePlayers-cnt-list-player {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
-  height: 1.9rem;
   margin: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   padding: 5px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.63);
   text-transform: uppercase;
+  cursor: pointer;
 }
 .activePlayer {
   background-color: greenyellow;
@@ -500,63 +527,31 @@ footer {
   top: 90%;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: auto;
+  height: 10%;
   background-color: white;
   border: none;
   outline: yellow;
   background-color: black;
   color: #fff;
   letter-spacing: 2px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0 10px;
 }
-.modal-activePlayers-cnt-list-player-name {
-  display: flex;
-  align-items: center;
-  width: 80%;
-  font-size: 0.8rem;
+.modal-allPlayers-cnt-confirm:hover {
+  background-color: tomato;
 }
 
 /* 3/3 part modal - addPlayer */
-.modal-addPlayer {
-  display: none;
-  z-index: 1;
-  position: absolute;
-  top: 25%;
-  bottom: 25%;
-  left: 10%;
-  right: 10%;
-  background: linear-gradient(
-    to bottom,
-    var(--backgroundOne) -60%,
-    var(--backgroundTwo) 120%
-  );
-  border-radius: 5px;
-  box-shadow: 0 0 10px 0px black;
-  transform: scale(0);
-  animation: aniModal 0.2s ease-out forwards;
-}
-.modal-addPlayer-buttonClose {
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  border-radius: 50%;
-  color: white;
-  font-size: 2rem;
-}
-
 .modal-addPlayer-title {
   position: absolute;
   top: 2%;
   left: 50%;
   transform: translateX(-50%);
-  width: min-content;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  background-color: black;
-  font-size: 1rem;
 }
 .modal-addPlayer-cnt {
   display: flex;
@@ -566,7 +561,7 @@ footer {
   position: absolute;
   top: 15%;
   bottom: 0;
-  width: 100%;
+  width: 90%;
 }
 .modal-addPlayer-cnt-nameStack,
 .modal-addPlayer-cnt-positionStack,
@@ -574,30 +569,32 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .modal-addPlayer-cnt-nameStack-fullName,
 .modal-addPlayer-cnt-positionStack-string,
 .modal-addPlayer-cnt-skillStack-string {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
+  width: 100%;
   font-size: 0.9rem;
   background-color: #000;
+  text-align: center;
 }
 .modal-addPlayer-cnt-nameStack-fullNameString {
   text-align: center;
   height: 1.5rem;
-  /* width: 60%; */
 }
 .modal-addPlayer-cnt-nameStack-fullNameString::placeholder {
   color: rgb(175, 174, 174);
   text-align: center;
 }
 .modal-addPlayer-add {
-  width: 60%;
+  width: auto;
   background-color: white;
   border: none;
   outline: yellow;
@@ -607,6 +604,7 @@ footer {
   font-size: 1.5rem;
   text-transform: uppercase;
   border-radius: 5px;
+  padding: 0 10px;
 }
 .activeModal {
   display: block;
@@ -623,144 +621,237 @@ footer {
   color: rgb(175, 174, 174);
   text-align: center;
 }
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
+
+/* SEKCJA MEDIA QUERIES PORTRAIT */
+@media (min-width: 360px) and (max-width: 725px) and (orientation: portrait) {
+  .menu-views > * {
+    font-size: 1rem;
   }
 }
-@media (max-width: 300px) {
-  .menu-vievs-all-text {
-    font-size: 10px;
+@media (min-width: 726px) and (orientation: portrait) {
+  /* menu */
+  .menu-views > * {
+    font-size: 1.8rem;
+    margin: 0 5%;
   }
-}
-@media (min-width: 530px) {
-  .draw {
-    height: 8%;
-  }
-  .draw-button {
-    font-size: 25px;
-  }
-}
-@media (min-width: 700px) {
-  .menu-views div {
-    font-size: 0.8rem;
-  }
-  .menu-views div i {
+  .menu-views > * > i {
     font-size: 2.8rem;
   }
-  .setup {
-    height: 15%;
+  .menu-views-help {
+    position: absolute;
+    top: 10%;
+    right: 0%;
   }
-  .setup h3 {
-    font-size: 1.4rem;
+  .menu-views-help i {
+    font-size: 2.2rem;
+  }
+  /* team settings */
+  .setup-title {
+    font-size: 2rem;
   }
   .setup-form {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
-    font-size: 1.5rem;
-    margin-left: 30%;
-  }
-  .setup-form-input {
-    height: 50px;
-    width: 50px;
-    align-self: center;
-    font-size: 1.5rem;
-    margin-right: 20%;
-  }
-  .draw {
-    top: 35%;
-    height: 10%;
-  }
-  .draw-button {
-    font-size: 3.5rem;
-  }
-  .results {
-    top: 49%;
-  }
-  .results-teamName {
-    font-size: 3.5rem;
-  }
-  .results-skillRate {
-    width: 8vh;
-    height: 8vh;
-    font-size: 2.5rem;
-  }
-  .results-playersCnt-player {
-    height: 5rem;
     font-size: 1.8rem;
   }
-  .results-playersCnt-player-position {
-    width: 3.6rem;
-    height: 3.6rem;
+  .setup-form-input {
+    font-size: 1.8rem;
   }
-  .fas {
+  .setup-form-input::placeholder {
+    font-size: 1.2rem;
+  }
+  /* draw btn*/
+  .draw {
+    top: 34%;
+    height: 11.5%;
+  }
+  .draw-button {
     font-size: 3rem;
   }
+  /* results */
   .results-messageBefore {
     font-size: 2rem;
   }
-  footer {
-    font-size: 1.5rem;
-  }
-  .modal-allPlayers-cnt-title,
-  .modal-activePlayers-cnt-title {
+  .results-teamName {
     font-size: 2rem;
+    padding: 10px;
   }
-  .modal-allPlayers-cnt-input {
-    font-size: 1.5rem;
+  .results-skillRate {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+  .results-copyBtn {
+    width: 3.4rem;
+    height: 3.4rem;
+    font-size: 1.4rem;
+  }
+  .results-prevButton,
+  .results-nextButton {
+    font-size: 3rem;
+  }
+  .results-playersCnt-player {
+    font-size: 1rem;
+  }
+  .results-playersCnt-player-position {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 1.4rem;
+  }
+  /* footer */
+  footer {
+    font-size: 1.8rem;
+  }
+  /* modals 1 i 2*/
+  .modal-allPlayers-buttonClose,
+  .modal-activePlayers-buttonClose,
+  .modal-addPlayer-buttonClose {
+    font-size: 3rem;
   }
   .modal-allPlayers-playerCounter {
-    font-size: 3rem;
-    width: 5rem;
-    height: 5rem;
+    width: 80px;
+    height: 80px;
+    font-size: 3.2rem;
   }
-  .modal-allPlayers-cnt-list-title,
-  .modal-activePlayers-cnt-list-title {
-    font-size: 1.9rem;
-  }
-  .modal-activePlayers-cnt-list-player {
-    height: 4.5rem;
-  }
-  .modal-activePlayers-cnt-list-player-name {
-    font-size: 1.9rem;
-  }
-  .modal-addPlayer-title,
-  .modal-addPlayer-add {
+  .modal-allPlayers-cnt-title,
+  .modal-activePlayers-cnt-title,
+  .modal-addPlayer-title {
     font-size: 2rem;
   }
+  .modal-allPlayers-cnt-input,
+  .modal-activePlayers-cnt-input {
+    top: 12%;
+    font-size: 1.8rem;
+  }
+  .modal-allPlayers-cnt-list,
+  .modal-activePlayers-cnt-list {
+    top: 22%;
+  }
+  .modal-allPlayers-cnt-list-title,
+  .modal-activePlayers-cnt-list-title,
+  .modal-activePlayers-removeAll {
+    font-size: 1.8rem;
+  }
+  .modal-allPlayers-cnt-list-player,
+  .modal-activePlayers-cnt-list-player {
+    font-size: 1.2rem;
+  }
+  .modal-allPlayers-cnt-confirm {
+    font-size: 2rem;
+  }
+  .fa-minus-circle {
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+  /* modal 3 */
   .modal-addPlayer-cnt-nameStack-fullName,
   .modal-addPlayer-cnt-positionStack-string,
   .modal-addPlayer-cnt-skillStack-string {
-    font-size: 1.9rem;
-  }
-  .modal-addPlayer-cnt-nameStack-fullNameString,
-  .modal-addPlayer-cnt-positionStack-positon-options,
-  .modal-addPlayer-cnt-positionStack-skill-options {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   .modal-addPlayer-cnt-nameStack-fullNameString {
-    height: 40px;
+    height: 3rem;
+    font-size: 1.3rem;
   }
-
-  .modal-allPlayers-cnt-list-player {
+  .modal-addPlayer-add {
+    font-size: 3rem;
+  }
+  .modal-addPlayer-cnt-positionStack-positon-options,
+  .modal-addPlayer-cnt-positionStack-skill-options {
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1023px) and (orientation: portrait) {
+  /* results */
+  .results-messageBefore {
+    font-size: 3rem;
+  }
+  .results-teamName {
+    font-size: 3rem;
+  }
+  .results-skillRate {
+    width: 5.5rem;
+    height: 5.5rem;
+    font-size: 2.5rem;
+  }
+  .results-copyBtn {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.2rem;
+  }
+  .results-prevButton,
+  .results-nextButton {
+    font-size: 6rem;
+  }
+  .results-playersCnt-player {
+    height: 4rem;
+    font-size: 2rem;
+  }
+  .results-playersCnt-player-position {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2rem;
+  }
+  /* footer */
+  footer {
+    font-size: 1.8rem;
+  }
+}
+/* SEKCJA MEDIA QUERIES LANDSCAPE */
+@media (min-width: 766px) and (orientation: landscape) {
+  .menu-views > * {
     font-size: 1.5rem;
-    height: 4.5rem;
+    margin: 0 5%;
   }
-  .modal-allPlayers-cnt-list-player-name {
-    font-size: 2.4rem;
+  .menu-views > * > i {
+    font-size: 2.5rem;
   }
-  .modal-allPlayers-cnt-list-player-position {
-    font-size: 2.4rem;
+  .menu-views-help {
+    position: absolute;
+    top: 10%;
+    right: -2%;
   }
-  .modal-allPlayers-cnt-confirm {
-    font-size: 2.4rem;
+  .menu-views-help i {
+    font-size: 2.2rem;
   }
+  /* draw btn*/
+  .draw {
+    top: 32.5%;
+    height: 11.5%;
+  }
+  .draw-button {
+    font-size: 3rem;
+  }
+  /* results */
+  .results-messageBefore {
+    font-size: 3rem;
+  }
+  .results-teamName {
+    font-size: 2rem;
+  }
+  .results-skillRate {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+  .results-copyBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.1rem;
+  }
+  .results-prevButton,
+  .results-nextButton {
+    font-size: 3rem;
+  }
+  .results-playersCnt-player {
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .results-playersCnt-player-position {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+  /* modals */
 }
