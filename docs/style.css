@@ -803,6 +803,10 @@ a:visited {
   .menu-views > * {
     font-size: 1.5rem;
     margin: 0 5%;
+    transition: 0.2s;
+  }
+  .menu-views > *:hover {
+    transform: scale(1.2) rotate(11deg);
   }
   .menu-views > * > i {
     font-size: 2.5rem;
