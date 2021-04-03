@@ -159,6 +159,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px 0px black;
   cursor: pointer;
+  transition: 0.2s;
 }
 .draw-button {
   width: 90%;
@@ -173,9 +174,6 @@ body {
   padding: 5px;
   border-radius: 5px;
   transition: 0.2s;
-}
-.draw-button:hover {
-  background-color: tomato;
 }
 /* fourth part - Results */
 .results {
@@ -824,6 +822,9 @@ a:visited {
     top: 32.5%;
     height: 11.5%;
   }
+  .draw:hover {
+    transform: translateX(-50%) scale(1.1);
+  }
   .draw-button {
     font-size: 3rem;
     cursor: pointer;
@@ -844,6 +845,11 @@ a:visited {
     width: 2rem;
     height: 2rem;
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .results-copyBtn:hover {
+    transform: scale(1.2);
   }
   .results-prevButton,
   .results-nextButton {
