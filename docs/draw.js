@@ -22,6 +22,8 @@ export class Draw{
 
             //zaciągnięcie danych z inputa
             this.teamNumber=Math.floor(document.querySelector('.setup-form-input').value);
+             // zabezpieczenie przed sprawdzaniem SR zawodnika
+              if(this.arrActivePlayers.length<this.teamNumber*2) return window.alert(`You have to choose more players 🤦‍♂️`)
             //zabezpieczenie przed pustym inputem
             if(this.teamNumber==="")return window.alert('Give me information about number of teams 😎');
             //zabezpieczeniem przed zbyt małym inputem
@@ -29,15 +31,6 @@ export class Draw{
             //wywołanie funkcji  łączącej wielkie tablice
             this.compare(this.arrActivePlayers, this.arrAllPlayers);
 
-            
-
-            //wersja v1 zalezna od liczby druzyn
-            // let procentBuffBetweenTeam = 0;
-            // if(this.teamNumber<=2){
-            //      procentBuffBetweenTeam = 5;
-            // }else{
-            //      procentBuffBetweenTeam = 8;
-            // }
 
             //wersja v2 zalezna od liczby zawodników aktywnych
             let procentBuffBetweenTeam = 0;

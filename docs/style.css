@@ -254,6 +254,7 @@ body {
     transform: scale(1);
   }
 }
+
 .results-copyBtn {
   display: flex;
   justify-content: center;
@@ -540,7 +541,7 @@ a:visited {
   padding: 0 10px;
 }
 .modal-allPlayers-cnt-confirm:hover {
-  background-color: tomato;
+  transform: translateX(-50%) scale(1.05);
 }
 
 /* 3/3 part modal - addPlayer */
@@ -619,7 +620,6 @@ a:visited {
   color: rgb(175, 174, 174);
   text-align: center;
 }
-
 /* SEKCJA MEDIA QUERIES PORTRAIT */
 @media (min-width: 360px) and (max-width: 725px) and (orientation: portrait) {
   .menu-views > * {
@@ -804,7 +804,7 @@ a:visited {
     transition: 0.2s;
   }
   .menu-views > *:hover {
-    transform: scale(1.2) rotate(11deg);
+    transform: scale(1.2) rotate(2deg);
   }
   .menu-views > * > i {
     font-size: 2.5rem;
