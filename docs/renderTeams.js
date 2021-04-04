@@ -41,6 +41,13 @@ export class RenderTeams{
             skillRate.classList.add('results-skillRate');
             skillRate.textContent = this.teamSkillRating(team);
             cntForTeam.appendChild(skillRate);
+
+            // const skillRate = document.createElement('div');
+            // skillRate.classList.add('chart');
+            // skillRate.dataset.percent=this.teamSkillRating(team);
+            // skillRate.textContent = this.teamSkillRating(team);
+            // cntForTeam.appendChild(skillRate);
+
             //players cnt
             const playersCnt = document.createElement('div');
             playersCnt.classList.add('results-playersCnt');
@@ -71,7 +78,7 @@ export class RenderTeams{
         const sRofTeam = [];
         team.forEach(el=>sRofTeam.push(el.skillRate));
         const avg =((sRofTeam.reduce((prev, next)=> (+prev) + (+next)) / (team.length * 5))*100).toFixed(0);
-        return `${avg.toString()}%`
+        return `${avg.toString()}`
     }
     showSlide(currentSlide){
         this.toHide.setAttribute('style', 'display: none');
