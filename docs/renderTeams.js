@@ -156,7 +156,7 @@ export class RenderTeams{
             team.forEach(el=>arr.push(el.name))
             txtTeams.push(arr);
         }
-        const wholeTxt = JSON.stringify(txtTeams).replace(/"/gi,"").replace(/,/gi," ");
+        const wholeTxt = JSON.stringify(txtTeams).replace(/"/gi,"").replace(/,/gi,", ");
         this.wholeTxt = wholeTxt;
     }
     copyTxt(){
