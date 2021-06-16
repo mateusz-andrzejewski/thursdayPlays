@@ -56,12 +56,12 @@
             {
                 name: 'szymon kaczyński',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'paweł karczewski',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'radosław kosiński',
