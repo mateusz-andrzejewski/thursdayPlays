@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '5'
+                skillRate: '4'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -16,7 +16,7 @@
             {
                 name: 'przemysław celadyn',
                 position: 'G',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'dawid czekała',
@@ -41,7 +41,7 @@
             {
                 name: 'michał jabłoński',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'mateusz jeż',
@@ -141,7 +141,7 @@
             {
                 name: 'wojciech trojanowski',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'jakub umywalnik',
@@ -157,6 +157,21 @@
                 name: 'artur zaczkowski',
                 position: 'A',
                 skillRate: '1'
+            },
+            {
+                name: 'łukasz kamczyk',
+                position: 'D',
+                skillRate: '1'
+            },
+            {
+                name: 'bartek ogoński',
+                position: 'D',
+                skillRate: '2'
+            },
+            {
+                name: 'jakub X',
+                position: 'A',
+                skillRate: '2'
             },
 
         ];
