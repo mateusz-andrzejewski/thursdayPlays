@@ -10,13 +10,13 @@
             },
             {
                 name: 'łukasz błaszczuk',
-                position: 'D',
-                skillRate: '1'
+                position: 'G',
+                skillRate: '4'
             },
             {
                 name: 'przemysław celadyn',
                 position: 'G',
-                skillRate: '5'
+                skillRate: '4'
             },
             {
                 name: 'dawid czekała',
@@ -31,7 +31,7 @@
             {
                 name: 'łukasz dąbrowski',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'carmine de lucia',
@@ -51,12 +51,12 @@
             {
                 name: 'grzegorz jóźwik',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'szymon kaczyński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'paweł karczewski',
@@ -71,7 +71,7 @@
             {
                 name: 'adam kowalski',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'radosław kowynia',
@@ -111,7 +111,7 @@
             {
                 name: 'marcin markowski',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'tomasz nowok',
@@ -169,11 +169,15 @@
                 skillRate: '2'
             },
             {
-                name: 'jakub X',
+                name: 'jakub Arka',
                 position: 'A',
                 skillRate: '2'
             },
-
+            {
+                name: 'szymon sujewicz',
+                position: 'D',
+                skillRate: '3'
+            }
         ];
         this.update = update; //ew us
         this.checkUpdate();   //ew us
