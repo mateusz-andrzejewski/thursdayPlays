@@ -26,7 +26,7 @@
             {
                 name: 'dawid dąbrowski',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'łukasz dąbrowski',
@@ -60,8 +60,8 @@
             },
             {
                 name: 'paweł karczewski',
-                position: 'A',
-                skillRate: '1'
+                position: 'G',
+                skillRate: '4'
             },
             {
                 name: 'radosław kosiński',
