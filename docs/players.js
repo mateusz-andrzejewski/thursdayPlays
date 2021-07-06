@@ -171,13 +171,18 @@
             {
                 name: 'jakub Arka',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'szymon sujewicz',
                 position: 'D',
                 skillRate: '3'
-            }
+            },
+            {
+                name: 'denis krupa',
+                position: 'A',
+                skillRate: '1'
+            },
         ];
         this.update = update; //ew us
         this.checkUpdate();   //ew us
