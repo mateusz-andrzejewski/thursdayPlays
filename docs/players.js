@@ -60,8 +60,8 @@
             },
             {
                 name: 'paweł karczewski',
-                position: 'G',
-                skillRate: '4'
+                position: 'A',
+                skillRate: '1'
             },
             {
                 name: 'radosław kosiński',
