@@ -26,7 +26,7 @@
             {
                 name: 'dawid dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'łukasz dąbrowski',
@@ -51,7 +51,7 @@
             {
                 name: 'grzegorz jóźwik',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'szymon kaczyński',
