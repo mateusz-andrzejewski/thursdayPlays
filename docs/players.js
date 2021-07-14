@@ -99,7 +99,7 @@
                 skillRate: '2'
             },
             {
-                name: 'kamil limok',
+                name: 'kamil brol limok',
                 position: 'D',
                 skillRate: '2'
             },
@@ -182,6 +182,26 @@
                 name: 'denis krupa',
                 position: 'A',
                 skillRate: '1'
+            },
+            {
+                name: 'aleksander cupok',
+                position: 'A',
+                skillRate: '1'
+            },
+            {
+                name: 'maciej jarząbek',
+                position: 'A',
+                skillRate: '4'
+            },
+            {
+                name: 'rafal kowalski',
+                position: 'D',
+                skillRate: '4'
+            },
+            {
+                name: 'patryk wojaczek',
+                position: 'A',
+                skillRate: '4'
             },
         ];
         this.update = update; //ew us
