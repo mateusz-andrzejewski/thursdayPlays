@@ -186,7 +186,7 @@
             {
                 name: 'aleksander cupok',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'maciej jarząbek',
@@ -202,6 +202,11 @@
                 name: 'patryk wojaczek',
                 position: 'A',
                 skillRate: '4'
+            },
+            {
+                name: 'miłosz bełbot',
+                position: 'D',
+                skillRate: '2'
             },
         ];
         this.update = update; //ew us
