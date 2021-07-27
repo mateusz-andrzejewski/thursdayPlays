@@ -212,7 +212,7 @@
                 name: 'wojciech ciołczyk',
                 position: 'D',
                 skillRate: '3'
-            },
+            }
         ];
         this.update = update; //ew us
         this.checkUpdate();   //ew us
