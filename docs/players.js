@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -207,6 +207,11 @@
                 name: 'miłosz bełbot',
                 position: 'D',
                 skillRate: '2'
+            },
+            {
+                name: 'wojciech ciołczyk',
+                position: 'D',
+                skillRate: '3'
             },
         ];
         this.update = update; //ew us
