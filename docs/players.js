@@ -31,7 +31,7 @@
             {
                 name: 'łukasz dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'carmine de lucia',
@@ -81,7 +81,7 @@
             {
                 name: 'arkadiusz krawczyk',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'karol krzyżankiewicz',
@@ -101,7 +101,7 @@
             {
                 name: 'kamil brol limok',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'mateusz malik',
@@ -115,8 +115,8 @@
             },
             {
                 name: 'tomasz nowok',
-                position: 'G',
-                skillRate: '4'
+                position: 'A',
+                skillRate: '3'
             },
             {
                 name: 'jakub piechocki',
