@@ -50,7 +50,7 @@
             },
             {
                 name: 'grzegorz jóźwik',
-                position: 'D',
+                position: 'A',
                 skillRate: '3'
             },
             {
@@ -110,7 +110,7 @@
             },
             {
                 name: 'marcin markowski',
-                position: 'A',
+                position: 'D',
                 skillRate: '3'
             },
             {
@@ -125,7 +125,7 @@
             },
             {
                 name: 'dawid ptak',
-                position: 'A',
+                position: 'D',
                 skillRate: '4'
             },
             {
@@ -185,7 +185,7 @@
             },
             {
                 name: 'aleksander cupok',
-                position: 'A',
+                position: 'D',
                 skillRate: '2'
             },
             {
