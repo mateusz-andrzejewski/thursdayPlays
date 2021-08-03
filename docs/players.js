@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -56,7 +56,7 @@
             {
                 name: 'szymon kaczyński',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'paweł karczewski',
@@ -111,7 +111,7 @@
             {
                 name: 'marcin markowski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'tomasz nowok',
@@ -191,7 +191,7 @@
             {
                 name: 'maciej jarząbek',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'rafal kowalski',
@@ -211,7 +211,7 @@
             {
                 name: 'wojciech ciołczyk',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '1'
             }
         ];
         this.update = update; //ew us
