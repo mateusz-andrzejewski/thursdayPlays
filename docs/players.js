@@ -212,6 +212,16 @@
                 name: 'wojciech ciołczyk',
                 position: 'D',
                 skillRate: '1'
+            },
+            {
+                name: 'bartosz botor',
+                position: 'D',
+                skillRate: '2'
+            },
+            {
+                name: 'marcel piotrowski',
+                position: 'D',
+                skillRate: '1'
             }
         ];
         this.update = update; //ew us
