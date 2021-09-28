@@ -66,12 +66,12 @@
             {
                 name: 'radosław kosiński',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'adam kowalski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'radosław kowynia',
@@ -101,7 +101,7 @@
             {
                 name: 'kamil brol limok',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'mateusz malik',
@@ -116,7 +116,7 @@
             {
                 name: 'tomasz nowok',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'jakub piechocki',
@@ -206,7 +206,7 @@
             {
                 name: 'miłosz bełbot',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'wojciech ciołczyk',
@@ -222,8 +222,20 @@
                 name: 'marcel piotrowski',
                 position: 'D',
                 skillRate: '1'
-            }
+            },
+            {
+                name: 'krystian hytrek',
+                position: 'A',
+                skillRate: '1'
+            },
+            {
+                name: 'Aleksander Rohn',
+                position: 'D',
+                skillRate: '3'
+            },
+
         ];
+
         this.update = update; //ew us
         this.checkUpdate();   //ew us
         this.helpIcon = document.querySelector('.menu-views-help');
