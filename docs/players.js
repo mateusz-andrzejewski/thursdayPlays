@@ -150,8 +150,8 @@
             },
             {
                 name: 'kamil wawoczny',
-                position: 'D',
-                skillRate: '2'
+                position: 'G',
+                skillRate: '4'
             },
             {
                 name: 'artur zaczkowski',
@@ -231,6 +231,11 @@
             {
                 name: 'Aleksander Rohn',
                 position: 'D',
+                skillRate: '3'
+            },
+            {
+                name: 'Aleksander Płatek',
+                position: 'A',
                 skillRate: '3'
             },
 
