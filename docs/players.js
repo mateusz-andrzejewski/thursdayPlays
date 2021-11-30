@@ -26,12 +26,12 @@
             {
                 name: 'dawid dąbrowski',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'łukasz dąbrowski',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'carmine de lucia',
@@ -71,7 +71,7 @@
             {
                 name: 'adam kowalski',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'radosław kowynia',
@@ -86,7 +86,7 @@
             {
                 name: 'karol krzyżankiewicz',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '1'
             },
             {
                 name: 'piotr kuźniewicz',
@@ -237,6 +237,11 @@
                 name: 'Aleksander Płatek',
                 position: 'A',
                 skillRate: '3'
+            },
+                     {
+                name: 'Adam Kudzia',
+                position: 'A',
+                skillRate: '2'
             },
 
         ];
