@@ -51,7 +51,7 @@
             {
                 name: 'grzegorz jóźwik',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'szymon kaczyński',
@@ -131,7 +131,7 @@
             {
                 name: 'bartek sadło',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'mateusz sochacki',
@@ -156,7 +156,7 @@
             {
                 name: 'artur zaczkowski',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'łukasz kamczyk',
