@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -36,17 +36,17 @@
             {
                 name: 'carmine de lucia',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'michał jabłoński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'mateusz jeż',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'grzegorz jóźwik',
@@ -61,17 +61,17 @@
             {
                 name: 'paweł karczewski',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'radosław kosiński',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'adam kowalski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'radosław kowynia',
@@ -81,7 +81,7 @@
             {
                 name: 'arkadiusz krawczyk',
                 position: 'D',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'karol krzyżankiewicz',
@@ -101,7 +101,7 @@
             {
                 name: 'kamil brol limok',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'mateusz malik',
@@ -111,7 +111,7 @@
             {
                 name: 'marcin markowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'tomasz nowok',
@@ -126,7 +126,7 @@
             {
                 name: 'dawid ptak',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'bartek sadło',
@@ -156,7 +156,7 @@
             {
                 name: 'artur zaczkowski',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'łukasz kamczyk',
@@ -191,7 +191,7 @@
             {
                 name: 'maciej jarząbek',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'rafal kowalski',
@@ -216,7 +216,7 @@
             {
                 name: 'bartosz botor',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'marcel piotrowski',
@@ -226,7 +226,7 @@
             {
                 name: 'krystian hytrek',
                 position: 'A',
-                skillRate: '1'
+                skillRate: '2'
             },
             {
                 name: 'Aleksander Rohn',
@@ -238,10 +238,15 @@
                 position: 'A',
                 skillRate: '3'
             },
-                     {
+            {
                 name: 'Adam Kudzia',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '3'
+            },
+            {
+                name: 'Piotr Gogolok',
+                position: 'A',
+                skillRate: '5'
             },
 
         ];
