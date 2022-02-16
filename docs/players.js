@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -31,7 +31,7 @@
             {
                 name: 'łukasz dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'carmine de lucia',
@@ -216,7 +216,7 @@
             {
                 name: 'bartosz botor',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'marcel piotrowski',
