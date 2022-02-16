@@ -248,6 +248,11 @@
                 position: 'A',
                 skillRate: '5'
             },
+          {
+                name: 'kamil gnida',
+                position: 'A',
+                skillRate: '1'
+            },
 
         ];
 
