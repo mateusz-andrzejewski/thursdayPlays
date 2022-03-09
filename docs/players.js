@@ -6,12 +6,12 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'łukasz błaszczuk',
                 position: 'G',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'przemysław celadyn',
@@ -41,12 +41,12 @@
             {
                 name: 'michał jabłoński',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '3'
             },
             {
                 name: 'mateusz jeż',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'grzegorz jóźwik',
@@ -56,7 +56,7 @@
             {
                 name: 'szymon kaczyński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'paweł karczewski',
@@ -126,7 +126,7 @@
             {
                 name: 'dawid ptak',
                 position: 'D',
-                skillRate: '5'
+                skillRate: '4'
             },
             {
                 name: 'bartek sadło',
