@@ -248,10 +248,20 @@
                 position: 'A',
                 skillRate: '5'
             },
-          {
+            {
                 name: 'kamil gnida',
                 position: 'A',
                 skillRate: '1'
+            },
+            {
+                name: 'fabian x',
+                position: 'A',
+                skillRate: '1'
+            },
+            {
+                name: 'damian czapski',
+                position: 'A',
+                skillRate: '2'
             },
 
         ];
