@@ -111,7 +111,7 @@
             {
                 name: 'marcin markowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'tomasz nowok',
@@ -151,7 +151,7 @@
             {
                 name: 'kamil wawoczny',
                 position: 'G',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'artur zaczkowski',
@@ -262,6 +262,21 @@
                 name: 'damian czapski',
                 position: 'A',
                 skillRate: '2'
+            },
+            {
+                name: 'kamil kasiński',
+                position: 'A',
+                skillRate: '3'
+            },
+            {
+                name: 'mateusz hauptman',
+                position: 'D',
+                skillRate: '3'
+            },
+            {
+                name: 'marcin psurek',
+                position: 'A',
+                skillRate: '1'
             },
 
         ];
