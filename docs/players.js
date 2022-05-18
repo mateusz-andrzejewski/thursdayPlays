@@ -101,7 +101,7 @@
             {
                 name: 'kamil brol limok',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'mateusz malik',
@@ -126,7 +126,7 @@
             {
                 name: 'dawid ptak',
                 position: 'D',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'bartek sadło',
@@ -226,7 +226,7 @@
             {
                 name: 'krystian hytrek',
                 position: 'A',
-                skillRate: '2'
+                skillRate: '1'
             },
             {
                 name: 'aleksander rohn',
@@ -266,7 +266,7 @@
             {
                 name: 'kamil kasiński',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'mateusz hauptman',
