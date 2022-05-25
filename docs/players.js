@@ -6,7 +6,7 @@
             {
                 name: 'mateusz andrzejewski',
                 position: 'A',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'łukasz błaszczuk',
@@ -16,7 +16,7 @@
             {
                 name: 'przemysław celadyn',
                 position: 'G',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'dawid czekała',
@@ -26,7 +26,7 @@
             {
                 name: 'dawid dąbrowski',
                 position: 'D',
-                skillRate: '3'
+                skillRate: '4'
             },
             {
                 name: 'łukasz dąbrowski',
@@ -151,7 +151,7 @@
             {
                 name: 'kamil wawoczny',
                 position: 'G',
-                skillRate: '4'
+                skillRate: '5'
             },
             {
                 name: 'artur zaczkowski',
@@ -277,6 +277,16 @@
                 name: 'marcin psurek',
                 position: 'A',
                 skillRate: '1'
+            },
+            {
+                name: 'anton minelo',
+                position: 'A',
+                skillRate: '5'
+            },
+            {
+                name: 'anton kolesnyk',
+                position: 'D',
+                skillRate: '3'
             },
 
         ];
