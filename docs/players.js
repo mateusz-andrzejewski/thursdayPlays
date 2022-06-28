@@ -15,8 +15,8 @@
             },
             {
                 name: 'przemysław celadyn',
-                position: 'G',
-                skillRate: '4'
+                position: 'A',
+                skillRate: '2'
             },
             {
                 name: 'dawid czekała',
@@ -126,7 +126,7 @@
             {
                 name: 'dawid ptak',
                 position: 'D',
-                skillRate: '5'
+                skillRate: '4'
             },
             {
                 name: 'bartek sadło',
@@ -151,7 +151,7 @@
             {
                 name: 'kamil wawoczny',
                 position: 'G',
-                skillRate: '5'
+                skillRate: '4'
             },
             {
                 name: 'artur zaczkowski',
