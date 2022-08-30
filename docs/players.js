@@ -96,7 +96,7 @@
             {
                 name: 'michał kuźniewicz',
                 position: 'D',
-                skillRate: '2'
+                skillRate: '3'
             },
             {
                 name: 'kamil brol limok',
@@ -125,8 +125,8 @@
             },
             {
                 name: 'dawid ptak',
-                position: 'D',
-                skillRate: '4'
+                position: 'A',
+                skillRate: '5'
             },
             {
                 name: 'bartek sadło',
@@ -236,7 +236,7 @@
             {
                 name: 'aleksander płatek',
                 position: 'A',
-                skillRate: '3'
+                skillRate: '2'
             },
             {
                 name: 'adam kudzia',
@@ -250,8 +250,8 @@
             },
             {
                 name: 'kamil gnida',
-                position: 'A',
-                skillRate: '1'
+                position: 'G',
+                skillRate: '4'
             },
             {
                 name: 'fabian x',
